@@ -478,14 +478,14 @@
                 <div class="alert alert-danger" id="form-error">
                     Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.
                 </div>
-                <form id="contactForm" action="https://formspree.io/f/https://formspree.io/f/xwponvzq" method="POST">
+                <form id="contactForm" action="https://formspree.io/f/xwponvzq" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" name="name" id="name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="email">E-Mail</label>
-                        <input type="email" name="email" id="email" class="form-control" required>
+                        <input type="email" name="_replyto" id="email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Telefon</label>
@@ -495,6 +495,8 @@
                         <label for="message">Nachricht</label>
                         <textarea name="message" id="message" class="form-control" required></textarea>
                     </div>
+                    <input type="hidden" name="_subject" value="Neue Anfrage von der AdWerk-Website">
+                    <input type="text" name="_gotcha" style="display:none">
                     <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Absenden</button>
                 </form>
             </div>
@@ -565,7 +567,7 @@
         // Start slideshow
         showSlides();
         
-        // Kontaktformular Verarbeitung
+        // Kontaktformular Verarbeitung - Verbesserte Version
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -573,11 +575,18 @@
             const formData = new FormData(form);
             const formAction = form.getAttribute('action');
             
+            // FormData in JSON umwandeln für Formspree
+            const jsonData = {};
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+            
             fetch(formAction, {
                 method: 'POST',
-                body: formData,
+                body: JSON.stringify(jsonData),
                 headers: {
-                    'Accept': 'application/json'
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
                 }
             })
             .then(response => {
@@ -589,11 +598,12 @@
                     setTimeout(function() {
                         document.getElementById('form-success').style.display = 'none';
                     }, 5000);
-                } else {
-                    throw new Error('Netzwerkfehler');
+                    return;
                 }
+                throw new Error('Fehler beim Senden');
             })
             .catch(error => {
+                console.error('Fehler:', error);
                 document.getElementById('form-error').style.display = 'block';
                 
                 // Fehlermeldung nach 5 Sekunden ausblenden
