@@ -555,8 +555,8 @@
                 display: none;
             }
             
-            .menu-btn {
-                display: block;
+            .mobile-controls {
+                display: flex;
             }
             
             /* Mobile Slideshow Optimization */
@@ -759,9 +759,14 @@
                         </button>
                     </li>
                 </ul>
-                <button class="menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <div class="mobile-controls">
+                    <button id="mobileThemeToggle" class="mobile-theme-toggle" aria-label="Theme umschalten">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
@@ -771,9 +776,6 @@
     <div class="mobile-menu" id="mobileMenu">
         <button class="close-menu" id="closeMenu">
             <i class="fas fa-times"></i>
-        </button>
-        <button id="mobileThemeToggle" class="mobile-theme-toggle" aria-label="Theme umschalten">
-            <i class="fas fa-sun"></i>
         </button>
         <ul class="mobile-nav">
             <li><a href="#home">Home</a></li>
