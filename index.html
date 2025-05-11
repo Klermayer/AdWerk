@@ -478,7 +478,7 @@
                 <div class="alert alert-danger" id="form-error">
                     Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.
                 </div>
-                <form id="contactForm">
+                <form id="contactForm" action="https://formspree.io/f/https://formspree.io/f/xwponvzq" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" name="name" id="name" class="form-control" required>
@@ -565,41 +565,42 @@
         // Start slideshow
         showSlides();
         
-        // Form Handling mit einfachem Fallback
+        // Kontaktformular Verarbeitung
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
+            const form = this;
+            const formData = new FormData(form);
+            const formAction = form.getAttribute('action');
             
-            if (name && email && message) {
-                // Einfache Formularvalidierung erfolgreich
-                
-                // Direkter E-Mail-Link als sichere Lösung
-                const mailtoLink = `mailto:adwerk.office2700@gmail.com?subject=Anfrage von ${encodeURIComponent(name)}&body=${encodeURIComponent("Name: " + name + "\nE-Mail: " + email + "\nTelefon: " + phone + "\nNachricht: " + message)}`;
-                
-                // Erfolg anzeigen und Formular zurücksetzen
-                document.getElementById('form-success').style.display = 'block';
-                document.getElementById('contactForm').reset();
-                
-                // Nach 3 Sekunden E-Mail-Client öffnen
-                setTimeout(function() {
-                    window.location.href = mailtoLink;
-                }, 3000);
-                
-                // Erfolgsmeldung nach 5 Sekunden ausblenden
-                setTimeout(function() {
-                    document.getElementById('form-success').style.display = 'none';
-                }, 5000);
-            } else {
-                // Fehlermeldung anzeigen, wenn nicht alle erforderlichen Felder ausgefüllt sind
+            fetch(formAction, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('form-success').style.display = 'block';
+                    form.reset();
+                    
+                    // Erfolgsmeldung nach 5 Sekunden ausblenden
+                    setTimeout(function() {
+                        document.getElementById('form-success').style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Netzwerkfehler');
+                }
+            })
+            .catch(error => {
                 document.getElementById('form-error').style.display = 'block';
+                
+                // Fehlermeldung nach 5 Sekunden ausblenden
                 setTimeout(function() {
                     document.getElementById('form-error').style.display = 'none';
                 }, 5000);
-            }
+            });
         });
         
         // Smooth Scrolling
