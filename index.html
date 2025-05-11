@@ -567,53 +567,9 @@
         // Start slideshow
         showSlides();
         
-        // Kontaktformular Verarbeitung - Verbesserte Version
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const form = this;
-            const formData = new FormData(form);
-            const formAction = form.getAttribute('action');
-            
-            // FormData in JSON umwandeln für Formspree
-            const jsonData = {};
-            formData.forEach((value, key) => {
-                jsonData[key] = value;
-            });
-            
-            fetch(formAction, {
-                method: 'POST',
-                body: JSON.stringify(jsonData),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    document.getElementById('form-success').style.display = 'block';
-                    form.reset();
-                    
-                    // Erfolgsmeldung nach 5 Sekunden ausblenden
-                    setTimeout(function() {
-                        document.getElementById('form-success').style.display = 'none';
-                    }, 5000);
-                    return;
-                }
-                throw new Error('Fehler beim Senden');
-            })
-            .catch(error => {
-                console.error('Fehler:', error);
-                document.getElementById('form-error').style.display = 'block';
-                
-                // Fehlermeldung nach 5 Sekunden ausblenden
-                setTimeout(function() {
-                    document.getElementById('form-error').style.display = 'none';
-                }, 5000);
-            });
-        });
-        
-        // Smooth Scrolling
+        // Kontaktformular funktioniert jetzt direkt über Formspree – kein JS nötig
+
+// Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
