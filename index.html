@@ -569,7 +569,7 @@
         // Initialize EmailJS
         (function() {
             // EmailJS User ID - Verwenden Sie Ihre eigene ID nach der Registrierung
-            emailjs.init("USER_ID_HIER_EINFÜGEN");
+            emailjs.init("SdIhY9rj1l2lyi8sk");
         })();
         
         // Form Handling with EmailJS
@@ -595,7 +595,7 @@
                 const mailtoLink = `mailto:adwerk.office2700@gmail.com?subject=Anfrage von ${name}&body=Name: ${name}%0D%0AE-Mail: ${email}%0D%0ATelefon: ${phone}%0D%0ANachricht: ${message}`;
                 
                 // EmailJS senden
-                emailjs.send('default_service', 'template_id', templateParams)
+                emailjs.send('service_32rfybr', 'template_puq99in', templateParams)
                     .then(function(response) {
                         console.log('E-Mail erfolgreich gesendet!', response.status, response.text);
                         document.getElementById('form-success').style.display = 'block';
