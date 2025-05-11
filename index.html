@@ -478,9 +478,7 @@
                 <div class="alert alert-danger" id="form-error">
                     Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.
                 </div>
-                <form id="contactForm" action="https://formsubmit.co/adwerk.office2700@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="Neue Anfrage von der AdWerk Website">
-                    <input type="hidden" name="_next" value="https://formsubmit.co/thank-you/">
+                <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" name="name" id="name" class="form-control" required>
@@ -522,6 +520,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         // AOS Initialization (Animation On Scroll)
@@ -567,25 +566,63 @@
         // Start slideshow
         showSlides();
         
-        // Form will now be handled by FormSubmit service
-        // We'll just add basic validation and feedback for user experience
+        // Initialize EmailJS
+        (function() {
+            // EmailJS User ID - Verwenden Sie Ihre eigene ID nach der Registrierung
+            emailjs.init("USER_ID_HIER_EINFÜGEN");
+        })();
+        
+        // Form Handling with EmailJS
         document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
             
-            if (!name || !email || !message) {
-                e.preventDefault(); // Stop form submission
+            if (name && email && message) {
+                // E-Mail-Parameter
+                const templateParams = {
+                    from_name: name,
+                    reply_to: email,
+                    phone_number: phone,
+                    message: message,
+                    to_email: "adwerk.office2700@gmail.com"
+                };
                 
-                // Show error message
+                // Direkter E-Mail-Link als Fallback
+                const mailtoLink = `mailto:adwerk.office2700@gmail.com?subject=Anfrage von ${name}&body=Name: ${name}%0D%0AE-Mail: ${email}%0D%0ATelefon: ${phone}%0D%0ANachricht: ${message}`;
+                
+                // EmailJS senden
+                emailjs.send('default_service', 'template_id', templateParams)
+                    .then(function(response) {
+                        console.log('E-Mail erfolgreich gesendet!', response.status, response.text);
+                        document.getElementById('form-success').style.display = 'block';
+                        document.getElementById('contactForm').reset();
+                        
+                        setTimeout(function() {
+                            document.getElementById('form-success').style.display = 'none';
+                        }, 5000);
+                    }, function(error) {
+                        console.log('E-Mail konnte nicht gesendet werden', error);
+                        
+                        // Fallback: E-Mail-Client öffnen
+                        if (confirm("Das Formular konnte nicht elektronisch übermittelt werden. Möchten Sie stattdessen Ihren E-Mail-Client verwenden?")) {
+                            window.location.href = mailtoLink;
+                        } else {
+                            document.getElementById('form-error').style.display = 'block';
+                            setTimeout(function() {
+                                document.getElementById('form-error').style.display = 'none';
+                            }, 5000);
+                        }
+                    });
+            } else {
                 document.getElementById('form-error').style.display = 'block';
-                
-                // Hide error message after 5 seconds
                 setTimeout(function() {
                     document.getElementById('form-error').style.display = 'none';
                 }, 5000);
             }
-            // If validation passes, the form will submit normally to FormSubmit
         });
         
         // Smooth Scrolling
