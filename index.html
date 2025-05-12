@@ -977,6 +977,16 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Über uns</h2>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+                <p>Wir sind eine dynamische Werbeagentur, die sich auf die Erstellung professioneller Websites und effektive Paid Advertising Kampagnen spezialisiert hat. Unser Ziel ist es, Ihnen dabei zu helfen, Ihre Online-Präsenz zu maximieren und Ihre Zielgruppe zu erreichen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
             <h2 class="section-title" data-aos="fade-up">Unsere Dienstleistungen</h2>
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
@@ -1000,14 +1010,413 @@
                     <h3>Digitale Strategie</h3>
                     <p>Wir entwickeln ganzheitliche digitale Strategien, die Ihre Online-Präsenz stärken und Ihren Umsatz steigern.</p>
                 </div>
-            </div> data-aos="fade-up">Über uns</h2>
-            <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-                <p>Wir sind eine dynamische Werbeagentur, die sich auf die Erstellung professioneller Websites und effektive Paid Advertising Kampagnen spezialisiert hat. Unser Ziel ist es, Ihnen dabei zu helfen, Ihre Online-Präsenz zu maximieren und Ihre Zielgruppe zu erreichen.</p>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title"
+            <h2 class="section-title" data-aos="fade-up">Kontaktieren Sie uns</h2>
+            <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="alert alert-success" id="form-success">
+                    Vielen Dank für Ihre Nachricht! Wir werden uns so schnell wie möglich bei Ihnen melden.
+                </div>
+                <div class="alert alert-danger" id="form-error">
+                    Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.
+                </div>
+                <form id="contactForm" action="https://formspree.io/f/xwponvzq" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" name="_replyto" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" name="phone" id="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+                        <textarea name="message" id="message" class="form-control" required></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="Neue Anfrage von der AdWerk-Website">
+                    <input type="text" name="_gotcha" style="display:none">
+                    <input type="hidden" name="_next" value="#home">
+                    <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Absenden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Ad<span>Werk</span></div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#services">Dienstleistungen</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2025 AdWerk. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie-Banner -->
+    <div id="cookieBanner" class="cookie-banner" style="display: none;">
+        <div class="cookie-main">
+            <div class="cookie-text">
+                <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Durch die Nutzung unserer Website stimmen Sie unserer Verwendung von Cookies zu.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="cookieMoreInfo" class="cookie-more">Mehr anzeigen</button>
+                <button id="acceptCookies" class="cookie-btn cookie-accept">Akzeptieren</button>
+                <button id="declineCookies" class="cookie-btn cookie-decline">Nicht akzeptieren</button>
+            </div>
+        </div>
+        <div id="cookieDetails" class="cookie-details">
+            <h4>Verwendete Cookies und übermittelte Daten</h4>
+            <p>Auf unserer Website kommen folgende Arten von Cookies zum Einsatz:</p>
+            <ul>
+                <li><strong>Notwendige Cookies:</strong> Diese Cookies sind für die grundlegende Funktionalität der Website erforderlich und können nicht deaktiviert werden.</li>
+                <li><strong>Analyse-Cookies:</strong> Diese Cookies ermöglichen es uns, Besuche zu zählen und Bewegungsmuster auf unserer Website zu analysieren. Wir nutzen Google Analytics, um zu verstehen, wie Benutzer mit unserer Website interagieren.</li>
+            </ul>
+            <h4>Folgende Daten werden an Google Analytics übermittelt:</h4>
+            <ul>
+                <li>Anonymisierte IP-Adresse</li>
+                <li>Informationen über Ihren Browser und Ihr Gerät</li>
+                <li>Besuchte Seiten und Ihre Interaktionen auf unserer Website</li>
+                <li>Verweildauer auf unserer Website</li>
+                <li>Verweisende Website oder Quelle, von der Sie unsere Website besucht haben</li>
+            </ul>
+            <p>Die erhobenen Daten werden verwendet, um unser Webangebot zu verbessern und Ihnen ein besseres Nutzererlebnis zu bieten. Wir verkaufen Ihre Daten nicht an Dritte und verwenden sie ausschließlich für die genannten Analysezwecke.</p>
+            <p>Weitere Informationen zu unseren Datenschutzpraktiken finden Sie in unserer Datenschutzerklärung.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Cookie-Banner-Funktionalität
+        document.addEventListener('DOMContentLoaded', function() {
+            // AOS initialisieren
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: false,
+                mirror: true
+            });
+            
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const declineBtn = document.getElementById('declineCookies');
+            const moreInfoBtn = document.getElementById('cookieMoreInfo');
+            const cookieDetails = document.getElementById('cookieDetails');
+            
+            // Prüfen, ob Cookie-Einstellung bereits vorhanden ist
+            const cookieChoice = localStorage.getItem('cookies-accepted');
+            
+            // Wenn noch keine Entscheidung getroffen wurde, Banner anzeigen
+            if (cookieChoice === null) {
+                cookieBanner.style.display = 'flex';
+            }
+            
+            // Cookie akzeptieren
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookies-accepted', 'true');
+                cookieBanner.style.display = 'none';
+                
+                // Google Analytics laden
+                loadGoogleAnalytics();
+            });
+            
+            // Cookie ablehnen
+            declineBtn.addEventListener('click', function() {
+                localStorage.setItem('cookies-accepted', 'false');
+                cookieBanner.style.display = 'none';
+            });
+            
+            // Mehr Informationen anzeigen/ausblenden
+            moreInfoBtn.addEventListener('click', function() {
+                cookieDetails.classList.toggle('active');
+                
+                // Text des Buttons ändern
+                if (cookieDetails.classList.contains('active')) {
+                    moreInfoBtn.textContent = 'Weniger anzeigen';
+                } else {
+                    moreInfoBtn.textContent = 'Mehr anzeigen';
+                }
+            });
+            
+            // Theme Toggle
+            const themeToggleDesktop = document.getElementById('themeToggle');
+            const themeToggleMobile = document.getElementById('mobileThemeToggle');
+            const htmlElement = document.documentElement;
+            
+            // Gespeichertes Theme laden oder Standard (light) setzen
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            
+            // Icons aktualisieren
+            if (savedTheme === 'dark') {
+                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = 'fas fa-moon';
+                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = 'fas fa-moon';
+            } else {
+                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = 'fas fa-sun';
+                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = 'fas fa-sun';
+            }
+            
+            // Theme Toggle Funktion
+            function toggleTheme() {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                // Icons aktualisieren
+                const newIcon = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = newIcon;
+                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = newIcon;
+            }
+            
+            // Event-Listener zu Theme-Toggles hinzufügen
+            if (themeToggleDesktop) {
+                themeToggleDesktop.addEventListener('click', toggleTheme);
+            }
+            
+            if (themeToggleMobile) {
+                themeToggleMobile.addEventListener('click', toggleTheme);
+            }
+
+            // Mobile Menü
+            const menuBtn = document.getElementById('menuBtn');
+            const closeBtn = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('overlay');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+            
+            // Menü öffnen
+            if (menuBtn) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
+                    overlay.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            // Menü schließen
+            function closeMenu() {
+                mobileMenu.classList.remove('active');
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+            
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeMenu);
+            }
+            
+            if (overlay) {
+                overlay.addEventListener('click', closeMenu);
+            }
+            
+            // Menü schließen bei Klick auf einen Link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            // Slideshow initialisieren
+            initSlideshow();
+        });
+
+        // Slideshow Funktionalität
+        function initSlideshow() {
+            let slideIndex = 0;
+            const slidesWrapper = document.getElementById('slidesWrapper');
+            const slides = document.querySelectorAll('.mySlides');
+            const totalSlides = slides.length; // Dynamisch die Anzahl der Slides ermitteln
+            const dots = document.getElementsByClassName("dot");
+            const prevSlideBtn = document.getElementById('prevSlide');
+            const nextSlideBtn = document.getElementById('nextSlide');
+            let slideInterval;
+            
+            // Anfangsposition setzen
+            updateSlidePosition();
+            
+            // Auto-Slideshow starten
+            startSlideshow();
+            
+            // Event-Listener für Pfeile
+            prevSlideBtn.addEventListener('click', function() {
+                navigateSlide(-1);
+            });
+            
+            nextSlideBtn.addEventListener('click', function() {
+                navigateSlide(1);
+            });
+            
+            // Event-Listener für Punkte
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].addEventListener('click', function() {
+                    goToSlide(i);
+                });
+            }
+            
+            // Touch-Events für Mobilgeräte
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            slidesWrapper.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                clearInterval(slideInterval);
+            }, { passive: true });
+            
+            slidesWrapper.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                startSlideshow();
+            }, { passive: true });
+            
+            function handleSwipe() {
+                // Mindestdistanz für einen Swipe
+                const minSwipeDistance = 50;
+                const swipeDistance = touchEndX - touchStartX;
+                
+                if (Math.abs(swipeDistance) >= minSwipeDistance) {
+                    if (swipeDistance < 0) {
+                        // Nach links wischen
+                        navigateSlide(1);
+                    } else {
+                        // Nach rechts wischen
+                        navigateSlide(-1);
+                    }
+                }
+            }
+            
+            function updateSlidePosition() {
+                slidesWrapper.style.transform = `translateX(-${slideIndex * 33.333}%)`;
+                updateDots();
+            }
+            
+            function updateDots() {
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active-dot", "");
+                }
+                dots[slideIndex].className += " active-dot";
+            }
+            
+            function navigateSlide(direction) {
+                // Intervall zurücksetzen
+                clearInterval(slideInterval);
+                
+                slideIndex += direction;
+                
+                // Bei Überlauf umschalten
+                if (slideIndex >= totalSlides) {
+                    slideIndex = 0;
+                } else if (slideIndex < 0) {
+                    slideIndex = totalSlides - 1;
+                }
+                
+                updateSlidePosition();
+                startSlideshow();
+            }
+            
+            function goToSlide(index) {
+                // Intervall zurücksetzen
+                clearInterval(slideInterval);
+                
+                slideIndex = index;
+                updateSlidePosition();
+                startSlideshow();
+            }
+            
+            function startSlideshow() {
+                // Existierendes Intervall löschen
+                clearInterval(slideInterval);
+                
+                // Neues Intervall setzen
+                slideInterval = setInterval(function() {
+                    slideIndex++;
+                    if (slideIndex >= totalSlides) {
+                        slideIndex = 0;
+                    }
+                    updateSlidePosition();
+                }, 5000);
+            }
+        }
+        
+        // Sanftes Scrollen für Anker-Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Formular-Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const formSuccess = document.getElementById('form-success');
+            const formError = document.getElementById('form-error');
+            
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Erfolgreich gesendet
+                    formSuccess.style.display = 'block';
+                    form.reset();
+                    
+                    // Nach kurzer Verzögerung zum Anfang scrollen
+                    setTimeout(() => {
+                        window.location.href = '#home';
+                        window.scrollTo(0, 0);
+                        
+                        // Erfolgs-Nachricht ausblenden
+                        setTimeout(() => {
+                            formSuccess.style.display = 'none';
+                        }, 1000);
+                    }, 2000);
+                } else {
+                    // Fehler beim Senden
+                    formError.style.display = 'block';
+                    setTimeout(() => {
+                        formError.style.display = 'none';
+                    }, 3000);
+                }
+            })
+            .catch(error => {
+                // Netzwerk- oder anderer Fehler
+                console.error('Formular-Fehler:', error);
+                formError.style.display = 'block';
+                setTimeout(() => {
+                    formError.style.display = 'none';
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
