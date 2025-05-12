@@ -571,10 +571,15 @@
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             display: flex;
+            flex-direction: column;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .cookie-main {
+            display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         .cookie-text {
@@ -586,6 +591,7 @@
         .cookie-buttons {
             display: flex;
             gap: 10px;
+            align-items: center;
         }
         
         .cookie-btn {
@@ -615,6 +621,56 @@
         
         .cookie-decline:hover {
             background-color: var(--border-color);
+        }
+        
+        .cookie-more {
+            background: none;
+            border: none;
+            color: var(--accent-orange);
+            cursor: pointer;
+            margin-right: 15px;
+            text-decoration: underline;
+            font-size: 14px;
+        }
+        
+        .cookie-more:hover {
+            color: var(--accent-red);
+        }
+        
+        .cookie-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            margin-top: 0;
+            border-top: 0 solid var(--border-color);
+        }
+        
+        .cookie-details.active {
+            max-height: 500px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .cookie-details h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .cookie-details p {
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .cookie-details ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .cookie-details li {
+            margin-bottom: 5px;
+            font-size: 14px;
         }
         
         /* Media Queries */
@@ -760,20 +816,24 @@
             }
             
             /* Mobile Cookie Banner */
-            .cookie-banner {
+            .cookie-main {
                 flex-direction: column;
-                padding: 15px;
+                align-items: flex-start;
             }
             
             .cookie-text {
                 margin-right: 0;
                 margin-bottom: 15px;
-                text-align: center;
+                width: 100%;
             }
             
             .cookie-buttons {
                 width: 100%;
-                justify-content: center;
+                justify-content: space-between;
+            }
+            
+            .cookie-details {
+                padding: 0 5px;
             }
         }
         
@@ -1011,12 +1071,33 @@
 
     <!-- Cookie-Banner -->
     <div id="cookieBanner" class="cookie-banner" style="display: none;">
-        <div class="cookie-text">
-            <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Durch die Nutzung unserer Website stimmen Sie unserer Verwendung von Cookies zu.</p>
+        <div class="cookie-main">
+            <div class="cookie-text">
+                <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Durch die Nutzung unserer Website stimmen Sie unserer Verwendung von Cookies zu.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="cookieMoreInfo" class="cookie-more">Mehr anzeigen</button>
+                <button id="acceptCookies" class="cookie-btn cookie-accept">Akzeptieren</button>
+                <button id="declineCookies" class="cookie-btn cookie-decline">Nicht akzeptieren</button>
+            </div>
         </div>
-        <div class="cookie-buttons">
-            <button id="acceptCookies" class="cookie-btn cookie-accept">Akzeptieren</button>
-            <button id="declineCookies" class="cookie-btn cookie-decline">Nicht akzeptieren</button>
+        <div id="cookieDetails" class="cookie-details">
+            <h4>Verwendete Cookies und übermittelte Daten</h4>
+            <p>Auf unserer Website kommen folgende Arten von Cookies zum Einsatz:</p>
+            <ul>
+                <li><strong>Notwendige Cookies:</strong> Diese Cookies sind für die grundlegende Funktionalität der Website erforderlich und können nicht deaktiviert werden.</li>
+                <li><strong>Analyse-Cookies:</strong> Diese Cookies ermöglichen es uns, Besuche zu zählen und Bewegungsmuster auf unserer Website zu analysieren. Wir nutzen Google Analytics, um zu verstehen, wie Benutzer mit unserer Website interagieren.</li>
+            </ul>
+            <h4>Folgende Daten werden an Google Analytics übermittelt:</h4>
+            <ul>
+                <li>Anonymisierte IP-Adresse</li>
+                <li>Informationen über Ihren Browser und Ihr Gerät</li>
+                <li>Besuchte Seiten und Ihre Interaktionen auf unserer Website</li>
+                <li>Verweildauer auf unserer Website</li>
+                <li>Verweisende Website oder Quelle, von der Sie unsere Website besucht haben</li>
+            </ul>
+            <p>Die erhobenen Daten werden verwendet, um unser Webangebot zu verbessern und Ihnen ein besseres Nutzererlebnis zu bieten. Wir verkaufen Ihre Daten nicht an Dritte und verwenden sie ausschließlich für die genannten Analysezwecke.</p>
+            <p>Weitere Informationen zu unseren Datenschutzpraktiken finden Sie in unserer Datenschutzerklärung.</p>
         </div>
     </div>
 
@@ -1036,6 +1117,8 @@
             const cookieBanner = document.getElementById('cookieBanner');
             const acceptBtn = document.getElementById('acceptCookies');
             const declineBtn = document.getElementById('declineCookies');
+            const moreInfoBtn = document.getElementById('cookieMoreInfo');
+            const cookieDetails = document.getElementById('cookieDetails');
             
             // Prüfen, ob Cookie-Einstellung bereits vorhanden ist
             const cookieChoice = localStorage.getItem('cookies-accepted');
@@ -1058,6 +1141,18 @@
             declineBtn.addEventListener('click', function() {
                 localStorage.setItem('cookies-accepted', 'false');
                 cookieBanner.style.display = 'none';
+            });
+            
+            // Mehr Informationen anzeigen/ausblenden
+            moreInfoBtn.addEventListener('click', function() {
+                cookieDetails.classList.toggle('active');
+                
+                // Text des Buttons ändern
+                if (cookieDetails.classList.contains('active')) {
+                    moreInfoBtn.textContent = 'Weniger anzeigen';
+                } else {
+                    moreInfoBtn.textContent = 'Mehr anzeigen';
+                }
             });
             
             // Theme Toggle
