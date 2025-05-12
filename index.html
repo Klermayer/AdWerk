@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdWerk - Ihre Werbeagentur</title>
+    
+    <!-- Google Tag Manager -->
+    <script>
+        // Wird nur ausgeführt, wenn Cookies akzeptiert wurden
+        function loadGoogleAnalytics() {
+            // Google Analytics Tag hinzufügen
+            var gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-T1Z3GD2HGV';
+            document.head.appendChild(gaScript);
+            
+            // Google Analytics Code ausführen
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-T1Z3GD2HGV');
+        }
+        
+        // Prüfen, ob Cookies bereits akzeptiert wurden
+        if (localStorage.getItem('cookies-accepted') === 'true') {
+            loadGoogleAnalytics();
+        }
+    </script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
@@ -535,6 +559,64 @@
             color: #dc3545;
         }
         
+        /* Cookie-Hinweis */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+            padding: 15px 20px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .cookie-text {
+            flex: 1;
+            margin-right: 20px;
+            padding: 10px 0;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .cookie-btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        .cookie-accept {
+            background-color: var(--accent-orange);
+            color: white;
+        }
+        
+        .cookie-accept:hover {
+            background-color: var(--accent-red);
+            transform: translateY(-2px);
+        }
+        
+        .cookie-decline {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+        
+        .cookie-decline:hover {
+            background-color: var(--border-color);
+        }
+        
         /* Media Queries */
         @media (max-width: 768px) {
             .nav-links {
@@ -675,6 +757,23 @@
             .copyright {
                 font-size: 12px;
                 padding: 0 20px;
+            }
+            
+            /* Mobile Cookie Banner */
+            .cookie-banner {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .cookie-text {
+                margin-right: 0;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            
+            .cookie-buttons {
+                width: 100%;
+                justify-content: center;
             }
         }
         
@@ -910,10 +1009,21 @@
         </div>
     </footer>
 
+    <!-- Cookie-Banner -->
+    <div id="cookieBanner" class="cookie-banner" style="display: none;">
+        <div class="cookie-text">
+            <p>Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Durch die Nutzung unserer Website stimmen Sie unserer Verwendung von Cookies zu.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button id="acceptCookies" class="cookie-btn cookie-accept">Akzeptieren</button>
+            <button id="declineCookies" class="cookie-btn cookie-decline">Nicht akzeptieren</button>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // AOS Initialization (Animation On Scroll)
+        // Cookie-Banner-Funktionalität
         document.addEventListener('DOMContentLoaded', function() {
             // AOS initialisieren
             AOS.init({
@@ -922,7 +1032,34 @@
                 once: false,
                 mirror: true
             });
-
+            
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const declineBtn = document.getElementById('declineCookies');
+            
+            // Prüfen, ob Cookie-Einstellung bereits vorhanden ist
+            const cookieChoice = localStorage.getItem('cookies-accepted');
+            
+            // Wenn noch keine Entscheidung getroffen wurde, Banner anzeigen
+            if (cookieChoice === null) {
+                cookieBanner.style.display = 'flex';
+            }
+            
+            // Cookie akzeptieren
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookies-accepted', 'true');
+                cookieBanner.style.display = 'none';
+                
+                // Google Analytics laden
+                loadGoogleAnalytics();
+            });
+            
+            // Cookie ablehnen
+            declineBtn.addEventListener('click', function() {
+                localStorage.setItem('cookies-accepted', 'false');
+                cookieBanner.style.display = 'none';
+            });
+            
             // Theme Toggle
             const themeToggleDesktop = document.getElementById('themeToggle');
             const themeToggleMobile = document.getElementById('mobileThemeToggle');
