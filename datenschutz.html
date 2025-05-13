@@ -270,14 +270,17 @@
         }
         
         /* Zusätzliche Styles für die Datenschutzseite */
-        .privacy-content {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px 15px;
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            box-shadow: var(--card-shadow);
-        }
+        
+.privacy-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
         
         .privacy-content h1 {
             font-size: 1.8rem;
@@ -359,17 +362,38 @@
 
         /* Media Queries */
         @media (max-width: 768px) {
-    .privacy-content {
-        padding: 20px 20px;
-        margin: 15px auto;
-    }
+            body {
+                font-size: 16px; /* Basis-Schriftgröße für mobile Geräte */
+            }
+            
+            .container {
+                padding: 0 12px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .right-controls {
+                display: flex;
+                align-items: center;
+            }
+            
+            
+.privacy-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
 }
 
-@media (max-width: 480px) {
-    .privacy-content {
-        padding: 20px 24px;
-    }
-}
+            
+            .privacy-content h1 {
+                font-size: 1.6rem;
+            }
             
             .privacy-content h2 {
                 font-size: 1.3rem;
