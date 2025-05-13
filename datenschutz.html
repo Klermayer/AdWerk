@@ -661,7 +661,7 @@
             
             // Gespeichertes Theme laden oder Standard (light) setzen
             const savedTheme = localStorage.getItem('theme') || 'light';
-            htmlElement.setAttribute('data-theme', savedTheme);
+            htmlElement.dataset.theme = savedTheme;
             
             // Icons aktualisieren
             if (savedTheme === 'dark') {
@@ -674,10 +674,184 @@
             
             // Theme Toggle Funktion
             function toggleTheme() {
-                const currentTheme = htmlElement.getAttribute('data-theme');
+                const currentTheme = htmlElement.dataset.theme;
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 
-                htmlElement.setAttribute('data-theme', newTheme);
+                htmlElement.dataset.theme = newTheme;
+                localStorage.setItem('theme', newTheme);
+                
+                // Icons aktualisieren
+                const newIcon = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = newIcon;
+                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = newIcon;
+            }
+            
+            // Event-Listener zu Theme-Toggles hinzufügen
+            if (themeToggleDesktop) {
+                themeToggleDesktop.addEventListener('click', toggleTheme);
+            }
+            
+            if (themeToggleMobile) {
+                themeToggleMobile.addEventListener('click', toggleTheme);
+            }
+
+            // Mobile Menü
+            const menuBtn = document.getElementById('menuBtn');
+            const closeBtn = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('overlay');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+            
+            // Menü öffnen
+            if (menuBtn) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
+                    overlay.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            // Menü schließen
+            function closeMenu() {
+                mobileMenu.classList.remove('active');
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+            
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeMenu);
+            }
+            
+            if (overlay) {
+                overlay.addEventListener('click', closeMenu);
+            }
+            
+            // Menü schließen bei Klick auf einen Link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+            
+            // Zusätzlicher Event-Listener für Touch-Events auf mobilen Geräten
+            if ('ontouchstart' in window) {
+                // Behandlung von Touch-Ereignissen
+                document.querySelectorAll('a, button').forEach(element => {
+                    element.addEventListener('touchstart', function() {
+                        this.classList.add('touch-active');
+                    });
+                    
+                    element.addEventListener('touchend', function() {
+                        this.classList.remove('touch-active');
+                    });
+                });
+            }
+        });
+        
+        // Sanftes Scrollen für Anker-Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Schließe das mobile Menü, wenn es geöffnet ist
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    const overlay = document.getElementById('overlay');
+                    
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                        if (overlay) overlay.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>.</p>
+            <p>Wir verwenden Google Analytics mit der Erweiterung "_anonymizeIp()". Dadurch werden IP-Adressen gekürzt weiterverarbeitet und eine direkte Personenbeziehbarkeit kann so ausgeschlossen werden. Soweit den über Sie erhobenen Daten ein Personenbezug zukommt, wird dieser also sofort ausgeschlossen und die personenbezogenen Daten damit umgehend gelöscht.</p>
+            <p>Wir nutzen Google Analytics, um die Nutzung unserer Website analysieren und regelmäßig verbessern zu können. Über die gewonnenen Statistiken können wir unser Angebot verbessern und für Sie als Nutzer interessanter ausgestalten. Für die Ausnahmefälle, in denen personenbezogene Daten in die USA übertragen werden, hat sich Google dem EU-US Privacy Shield unterworfen, <a href="https://www.privacyshield.gov/EU-US-Framework" target="_blank">https://www.privacyshield.gov/EU-US-Framework</a>.</p>
+            <p>Rechtsgrundlage für die Nutzung von Google Analytics ist Art. 6 Abs. 1 S. 1 lit. f DSGVO.</p>
+            <p>Informationen des Drittanbieters: Google Dublin, Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Ireland, Fax: +353 (1) 436 1001. Nutzerbedingungen: <a href="https://www.google.com/analytics/terms/de.html" target="_blank">https://www.google.com/analytics/terms/de.html</a>, Übersicht zum Datenschutz: <a href="https://www.google.com/intl/de/analytics/learn/privacy.html" target="_blank">https://www.google.com/intl/de/analytics/learn/privacy.html</a>, sowie die Datenschutzerklärung: <a href="https://www.google.de/intl/de/policies/privacy" target="_blank">https://www.google.de/intl/de/policies/privacy</a>.</p>
+            
+            <h2>5. Soziale Medien</h2>
+            <p>Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke, um mit den dort aktiven Kunden und Interessenten kommunizieren und sie dort über unsere Dienste informieren zu können. Beim Besuch dieser Onlinepräsenzen können Daten über den Nutzer verarbeitet werden, die über die Grenzen der Europäischen Union hinaus verarbeitet werden können. Dies kann für die Betroffenen Risiken bergen, da z.B. die Durchsetzung von Betroffenenrechten erschwert werden könnte. Wir weisen darauf hin, dass US-Anbieter, die unter dem Privacy-Shield zertifiziert sind, sich verpflichten, die Datenschutzstandards der EU einzuhalten.</p>
+            <p>Wir haben keine Kontrolle über die Datenerhebung und deren weitere Verarbeitung im Falle von sozialen Netzwerken. Es ist nicht ausgeschlossen, dass Anbieter die Daten für eigene Zwecke, z.B. Profiling, verwenden und mit anderen Daten, z.B. Nutzungsdaten anderer Plattformen, verknüpfen.</p>
+            
+            <h2>6. Dauer der Speicherung</h2>
+            <p>Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Für die personenbezogenen Daten, die per E-Mail oder über das Kontaktformular übersandt wurden, ist dies dann der Fall, wenn die jeweilige Konversation mit dem Nutzer beendet ist. Beendet ist die Konversation dann, wenn sich aus den Umständen entnehmen lässt, dass der betroffene Sachverhalt abschließend geklärt ist.</p>
+            
+            <h2>7. Sicherheit</h2>
+            <p>Wir bedienen uns im Übrigen geeigneter technischer und organisatorischer Sicherheitsmaßnahmen, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen Entwicklung fortlaufend verbessert.</p>
+            
+            <h2>8. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
+            <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Mai 2025.</p>
+            <p>Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf der Website unter <a href="datenschutz.html">https://www.adwerk.at/datenschutz.html</a> von Ihnen abgerufen und ausgedruckt werden.</p>
+            
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Ad<span>Werk</span></div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">Über uns</a></li>
+                <li><a href="index.html#services">Dienstleistungen</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+                <li><a href="datenschutz.html">Datenschutz</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2025 AdWerk. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // AOS initialisieren
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Theme Toggle
+            const themeToggleDesktop = document.getElementById('themeToggle');
+            const themeToggleMobile = document.getElementById('mobileThemeToggle');
+            const htmlElement = document.documentElement;
+            
+            // Gespeichertes Theme laden oder Standard (light) setzen
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            htmlElement.dataset.theme = savedTheme;
+            
+            // Icons aktualisieren
+            if (savedTheme === 'dark') {
+                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = 'fas fa-moon';
+                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = 'fas fa-moon';
+            } else {
+                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = 'fas fa-sun';
+                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = 'fas fa-sun';
+            }
+            
+            // Theme Toggle Funktion
+            function toggleTheme() {
+                const currentTheme = htmlElement.dataset.theme;
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                htmlElement.dataset.theme = newTheme;
                 localStorage.setItem('theme', newTheme);
                 
                 // Icons aktualisieren
