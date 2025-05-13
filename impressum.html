@@ -270,14 +270,17 @@
         }
         
         /* Zusätzliche Styles für die Impressum-Seite */
-        .imprint-content {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px 15px;
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            box-shadow: var(--card-shadow);
-        }
+        
+.imprint-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
         
         .imprint-content h1 {
             font-size: 1.8rem;
@@ -340,17 +343,38 @@
 
         /* Media Queries */
         @media (max-width: 768px) {
-    .imprint-content {
-        padding: 20px 20px;
-        margin: 15px auto;
-    }
+            body {
+                font-size: 16px; /* Basis-Schriftgröße für mobile Geräte */
+            }
+            
+            .container {
+                padding: 0 12px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .right-controls {
+                display: flex;
+                align-items: center;
+            }
+            
+            
+.imprint-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
 }
 
-@media (max-width: 480px) {
-    .imprint-content {
-        padding: 20px 24px;
-    }
-}
+            
+            .imprint-content h1 {
+                font-size: 1.6rem;
+            }
             
             .imprint-content h2 {
                 font-size: 1.3rem;
