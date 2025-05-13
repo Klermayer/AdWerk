@@ -1,4 +1,691 @@
-<h2>
+<!DOCTYPE html>
+<html data-theme="light" lang="de">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Datenschutzerklärung - AdWerk
+  </title>
+  <!-- Dieselben Stylesheets wie auf der Hauptseite -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+  <style>
+   :root {
+            /* Light Theme (Default) */
+            --primary-bg: #ffffff;
+            --secondary-bg: #f1f1f1;
+            --text-color: #212529;
+            --text-muted: #6c757d;
+            --card-bg: #f8f9fa;
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-color: #dee2e6;
+            --accent-orange: #ff6b00;
+            --accent-red: #e63946;
+            --slide-overlay: rgba(255, 255, 255, 0.1);
+        }
+        
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --primary-bg: #121212;
+            --secondary-bg: #1e1e1e;
+            --text-color: #f5f5f5;
+            --text-muted: #adb5bd;
+            --card-bg: #2d2d2d;
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            --border-color: #444;
+            --slide-overlay: rgba(0, 0, 0, 0.5);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--secondary-bg);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--accent-orange);
+        }
+        
+        .logo span {
+            color: var(--accent-red);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-orange);
+        }
+        
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(15deg);
+            color: var(--accent-orange);
+        }
+        
+        /* Right Controls */
+        .right-controls {
+            display: none;
+        }
+        
+        .mobile-theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 15px;
+            padding: 8px;
+        }
+        
+        .mobile-theme-toggle:hover {
+            color: var(--accent-orange);
+        }
+        
+        /* Mobile Menu Button */
+        .menu-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .menu-btn:hover {
+            color: var(--accent-orange);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: var(--secondary-bg);
+            padding: 50px 30px;
+            z-index: 200;
+            transition: right 0.3s ease;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .close-menu {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .mobile-nav {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .mobile-nav li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: block;
+            padding: 10px 0;
+        }
+        
+        .mobile-nav a:hover {
+            color: var(--accent-orange);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 150;
+            display: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-bg);
+            padding: 25px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .footer-links li {
+            margin: 0 10px;
+        }
+        
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-orange);
+        }
+        
+        .copyright {
+            color: var(--text-muted);
+            font-size: 14px;
+            padding: 0 15px;
+        }
+        
+        /* Zusätzliche Styles für die Datenschutzseite */
+        .privacy-content {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px 15px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .privacy-content h1 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .privacy-content h2 {
+            color: var(--accent-orange);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-orange);
+            padding-bottom: 8px;
+            font-size: 1.4rem;
+        }
+        
+        .privacy-content h3 {
+            color: var(--text-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .privacy-content p, .privacy-content li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        .privacy-content ul, .privacy-content ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+        
+        .privacy-content strong {
+            color: var(--accent-orange);
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            background-color: var(--accent-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        .back-btn:hover {
+            background-color: var(--accent-red);
+        }
+        
+        /* Für Tabellen */
+        .privacy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        .privacy-table th, .privacy-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        
+        .privacy-table th {
+            background-color: var(--secondary-bg);
+        }
+        
+        .privacy-table tr:nth-child(even) {
+            background-color: var(--primary-bg);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Basis-Schriftgröße für mobile Geräte */
+            }
+            
+            .container {
+                padding: 0 12px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .right-controls {
+                display: flex;
+                align-items: center;
+            }
+            
+            .privacy-content {
+                padding: 20px 12px;
+                margin: 15px auto;
+            }
+            
+            .privacy-content h1 {
+                font-size: 1.6rem;
+            }
+            
+            .privacy-content h2 {
+                font-size: 1.3rem;
+                margin-top: 25px;
+            }
+            
+            .privacy-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .privacy-content p, .privacy-content li {
+                font-size: 0.95rem;
+            }
+            
+            /* Verbesserter Footer für Mobilgeräte */
+            .footer-links {
+                flex-direction: column;
+                gap: 5px;
+                margin-bottom: 10px;
+            }
+            
+            .footer-links li {
+                margin: 3px 0;
+            }
+            
+            .copyright {
+                font-size: 12px;
+            }
+            
+            /* Bessere Tap-Targets für Mobilgeräte */
+            .mobile-nav a, 
+            .back-btn,
+            .menu-btn,
+            .mobile-theme-toggle,
+            .close-menu {
+                padding: 12px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .back-btn {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            /* Verbesserte Tabellen für Mobilgeräte */
+            .privacy-table {
+                font-size: 0.85rem;
+            }
+            
+            .privacy-table th, .privacy-table td {
+                padding: 6px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .privacy-content h1 {
+                font-size: 1.4rem;
+            }
+            
+            .privacy-content h2 {
+                font-size: 1.2rem;
+            }
+            
+            .privacy-content h3 {
+                font-size: 1rem;
+            }
+            
+            .privacy-content p, .privacy-content li {
+                font-size: 0.9rem;
+            }
+            
+            .mobile-menu {
+                width: 85%;
+            }
+        }
+        
+        /* Verbesserungen für die Touch-Bedienung */
+        @media (pointer: coarse) {
+            .nav-links a,
+            .mobile-nav a,
+            .footer-links a,
+            .mobile-theme-toggle,
+            .menu-btn,
+            .close-menu,
+            .back-btn {
+                padding: 12px;
+                min-height: 44px;
+            }
+            
+            .footer-links li {
+                margin: 5px 10px;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <!-- Header -->
+  <header>
+   <div class="container">
+    <nav>
+     <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+      <img alt="AdWerk Logo" src="logo.png" style="height: 40px;"/>
+      <span style="font-size: 24px; font-weight: bold;">
+       <span style="color: var(--accent-orange);">
+        Ad
+       </span>
+       <span style="color: var(--accent-red);">
+        Werk
+       </span>
+      </span>
+     </div>
+     <ul class="nav-links">
+      <li>
+       <a href="index.html">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="index.html#about">
+        Über uns
+       </a>
+      </li>
+      <li>
+       <a href="index.html#services">
+        Dienstleistungen
+       </a>
+      </li>
+      <li>
+       <a href="index.html#contact">
+        Kontakt
+       </a>
+      </li>
+      <li>
+       <button aria-label="Theme umschalten" class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun">
+        </i>
+       </button>
+      </li>
+     </ul>
+     <div class="right-controls">
+      <button aria-label="Theme umschalten" class="mobile-theme-toggle" id="mobileThemeToggle">
+       <i class="fas fa-sun">
+       </i>
+      </button>
+      <button aria-label="Menü öffnen" class="menu-btn" id="menuBtn">
+       <i class="fas fa-bars">
+       </i>
+      </button>
+     </div>
+    </nav>
+   </div>
+  </header>
+  <!-- Mobile Menu -->
+  <div class="overlay" id="overlay">
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+   <button aria-label="Menü schließen" class="close-menu" id="closeMenu">
+    <i class="fas fa-times">
+    </i>
+   </button>
+   <ul class="mobile-nav">
+    <li>
+     <a href="index.html">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="index.html#about">
+      Über uns
+     </a>
+    </li>
+    <li>
+     <a href="index.html#services">
+      Dienstleistungen
+     </a>
+    </li>
+    <li>
+     <a href="index.html#contact">
+      Kontakt
+     </a>
+    </li>
+    <li>
+     <a href="datenschutz.html">
+      Datenschutz
+     </a>
+    </li>
+    <li>
+     <a href="impressum.html">
+      Impressum
+     </a>
+    </li>
+   </ul>
+  </div>
+  <!-- Datenschutz Content -->
+  <div class="container">
+   <div class="privacy-content">
+    <h1>
+     Datenschutzerklärung
+    </h1>
+    <a class="back-btn" href="index.html">
+     <i class="fas fa-arrow-left">
+     </i>
+     Zurück zur Startseite
+    </a>
+    <h2>
+     1. Allgemeine Informationen
+    </h2>
+    <p>
+     Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer Privatsphäre ist für uns sehr wichtig. Nachfolgend informieren wir Sie ausführlich über den Umgang mit Ihren Daten.
+    </p>
+    <h3>
+     1.1 Verantwortliche Stelle
+    </h3>
+    <p>
+     Verantwortlich für die Datenverarbeitung auf dieser Website ist:
+    </p>
+    <p>
+     <strong>
+      AdWerk GmbH
+     </strong>
+     <br/>
+     Musterstraße 123
+     <br/>
+     1010 Wien
+     <br/>
+     Österreich
+     <br/>
+     <br/>
+     Telefon: +43 1 234 56789
+     <br/>
+     E-Mail: info@adwerk.at
+    </p>
+    <h3>
+     1.2 Datenschutzbeauftragter
+    </h3>
+    <p>
+     Unseren Datenschutzbeauftragten erreichen Sie unter:
+    </p>
+    <p>
+     E-Mail: datenschutz@adwerk.at
+     <br/>
+     Telefon: +43 1 234 56789
+    </p>
+    <h2>
+     2. Ihre Rechte
+    </h2>
+    <p>
+     Sie haben folgende Rechte bezüglich der Sie betreffenden personenbezogenen Daten:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Recht auf Auskunft
+      </strong>
+      (Art. 15 DSGVO)
+     </li>
+     <li>
+      <strong>
+       Recht auf Berichtigung
+      </strong>
+      (Art. 16 DSGVO)
+     </li>
+     <li>
+      <strong>
+       Recht auf Löschung
+      </strong>
+      (Art. 17 DSGVO)
+     </li>
+     <li>
+      <strong>
+       Recht auf Einschränkung der Verarbeitung
+      </strong>
+      (Art. 18 DSGVO)
+     </li>
+     <li>
+      <strong>
+       Recht auf Datenübertragbarkeit
+      </strong>
+      (Art. 20 DSGVO)
+     </li>
+     <li>
+      <strong>
+       Recht auf Widerspruch gegen die Verarbeitung
+      </strong>
+      (Art. 21 DSGVO)
+     </li>
+     <li>
+      <strong>
+       Recht auf Widerruf der datenschutzrechtlichen Einwilligungserklärung
+      </strong>
+      (Art. 7 Abs. 3 DSGVO)
+     </li>
+     <li>
+      <strong>
+       Recht auf Beschwerde bei einer Aufsichtsbehörde
+      </strong>
+      (Art. 77 DSGVO)
+     </li>
+    </ul>
+    <h2>
      3. Datenerfassung auf unserer Website
     </h2>
     <h3>
