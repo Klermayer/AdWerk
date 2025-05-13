@@ -359,31 +359,17 @@
 
         /* Media Queries */
         @media (max-width: 768px) {
-            body {
-                font-size: 16px; /* Basis-Schriftgröße für mobile Geräte */
-            }
-            
-            .container {
-                padding: 0 12px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .right-controls {
-                display: flex;
-                align-items: center;
-            }
-            
-            .privacy-content {
-                padding: 20px 12px;
-                margin: 15px auto;
-            }
-            
-            .privacy-content h1 {
-                font-size: 1.6rem;
-            }
+    .privacy-content {
+        padding: 20px 20px;
+        margin: 15px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .privacy-content {
+        padding: 20px 24px;
+    }
+}
             
             .privacy-content h2 {
                 font-size: 1.3rem;
