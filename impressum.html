@@ -340,31 +340,17 @@
 
         /* Media Queries */
         @media (max-width: 768px) {
-            body {
-                font-size: 16px; /* Basis-Schriftgröße für mobile Geräte */
-            }
-            
-            .container {
-                padding: 0 12px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .right-controls {
-                display: flex;
-                align-items: center;
-            }
-            
-            .imprint-content {
-                padding: 20px 12px;
-                margin: 15px auto;
-            }
-            
-            .imprint-content h1 {
-                font-size: 1.6rem;
-            }
+    .imprint-content {
+        padding: 20px 20px;
+        margin: 15px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .imprint-content {
+        padding: 20px 24px;
+    }
+}
             
             .imprint-content h2 {
                 font-size: 1.3rem;
