@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdWerk - Ihre Werbeagentur</title>
-    
-    <!-- Google Tag Manager -->
-    <script>
-        // Wird nur ausgeführt, wenn Cookies akzeptiert wurden
+<html data-theme="light" lang="de">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   AdWerk - Ihre Werbeagentur
+  </title>
+  <!-- Google Tag Manager -->
+  <script>
+   // Wird nur ausgeführt, wenn Cookies akzeptiert wurden
         function loadGoogleAnalytics() {
             // Google Analytics Tag hinzufügen
             var gaScript = document.createElement('script');
@@ -26,12 +27,11 @@
         if (localStorage.getItem('cookies-accepted') === 'true') {
             loadGoogleAnalytics();
         }
-    </script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <style>
-        :root {
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+  <style>
+   :root {
             /* Light Theme (Default) */
             --primary-bg: #ffffff;
             --secondary-bg: #f1f1f1;
@@ -921,239 +921,408 @@
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
         }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                
-<div class="logo" style="display: flex; align-items: center; gap: 10px;">
-  <img src="logo.png" alt="AdWerk Logo" style="height: 40px;">
-</div>
-
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Über uns</a></li>
-                    <li><a href="#services">Dienstleistungen</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                    <li>
-                        <button id="themeToggle" class="theme-toggle" aria-label="Theme umschalten">
-                            <i class="fas fa-sun"></i>
-                        </button>
-                    </li>
-                </ul>
-                <div class="right-controls">
-                    <button id="mobileThemeToggle" class="mobile-theme-toggle">
-                        <i class="fas fa-sun"></i>
-                    </button>
-                    <button id="menuBtn" class="menu-btn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="overlay" id="overlay"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="close-menu" id="closeMenu">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="mobile-nav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Über uns</a></li>
-            <li><a href="#services">Dienstleistungen</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
+  </style>
+ </head>
+ <body>
+  <!-- Header -->
+  <header>
+   <div class="container">
+    <nav>
+     <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+      <img alt="AdWerk Logo" src="logo.png" style="height: 40px;"/>
+      <span style="font-size: 24px; font-weight: bold;">
+       <span style="color: var(--accent-orange);">
+        Ad
+       </span>
+       <span style="color: var(--accent-red);">
+        Werk
+       </span>
+      </span>
+     </div>
+     <ul class="nav-links">
+      <li>
+       <a href="#home">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="#about">
+        Über uns
+       </a>
+      </li>
+      <li>
+       <a href="#services">
+        Dienstleistungen
+       </a>
+      </li>
+      <li>
+       <a href="#contact">
+        Kontakt
+       </a>
+      </li>
+      <li>
+       <button aria-label="Theme umschalten" class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun">
+        </i>
+       </button>
+      </li>
+     </ul>
+     <div class="right-controls">
+      <button class="mobile-theme-toggle" id="mobileThemeToggle">
+       <i class="fas fa-sun">
+       </i>
+      </button>
+      <button class="menu-btn" id="menuBtn">
+       <i class="fas fa-bars">
+       </i>
+      </button>
+     </div>
+    </nav>
+   </div>
+  </header>
+  <!-- Mobile Menu -->
+  <div class="overlay" id="overlay">
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+   <button class="close-menu" id="closeMenu">
+    <i class="fas fa-times">
+    </i>
+   </button>
+   <ul class="mobile-nav">
+    <li>
+     <a href="#home">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="#about">
+      Über uns
+     </a>
+    </li>
+    <li>
+     <a href="#services">
+      Dienstleistungen
+     </a>
+    </li>
+    <li>
+     <a href="#contact">
+      Kontakt
+     </a>
+    </li>
+   </ul>
+  </div>
+  <!-- Slideshow Hero Section -->
+  <section class="slideshow-container" id="home">
+   <div class="slides-wrapper" id="slidesWrapper">
+    <div class="mySlides slide1">
+     <div class="slide-content">
+      <h1>
+       Ihre Digitale Präsenz
+       <span>
+        Steigern
+       </span>
+      </h1>
+      <p>
+       Wir helfen Ihnen, Ihre Online-Präsenz zu stärken und Ihre Zielgruppe effektiv zu erreichen. Mit maßgeschneiderten Lösungen und strategischer Werbung zum Erfolg.
+      </p>
+      <a class="btn" href="#contact">
+       Jetzt anfragen
+      </a>
+     </div>
     </div>
-
-    <!-- Slideshow Hero Section -->
-    <section id="home" class="slideshow-container">
-        <div class="slides-wrapper" id="slidesWrapper">
-            <div class="mySlides slide1">
-                <div class="slide-content">
-                    <h1>Ihre Digitale Präsenz <span>Steigern</span></h1>
-                    <p>Wir helfen Ihnen, Ihre Online-Präsenz zu stärken und Ihre Zielgruppe effektiv zu erreichen. Mit maßgeschneiderten Lösungen und strategischer Werbung zum Erfolg.</p>
-                    <a href="#contact" class="btn">Jetzt anfragen</a>
-                </div>
-            </div>
-            
-            <div class="mySlides slide2">
-                <div class="slide-content">
-                    <h1>Kreative <span>Werbelösungen</span></h1>
-                    <p>Von professionellen Websites bis hin zu effektiven Werbekampagnen - wir machen Ihr Unternehmen sichtbar.</p>
-                    <a href="#services" class="btn">Unsere Leistungen</a>
-                </div>
-            </div>
-            
-            <div class="mySlides slide3">
-                <div class="slide-content">
-                    <h1><span>Ad</span>Werk - Ihr Partner für digitales Marketing</h1>
-                    <p>Mit uns steigern Sie Ihren Erfolg durch zielgerichtetes Online-Marketing und professionelle Web-Präsenz.</p>
-                    <a href="#contact" class="btn">Kontakt aufnehmen</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Slideshow arrows -->
-        <div class="slide-arrow prev-slide" id="prevSlide">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <div class="slide-arrow next-slide" id="nextSlide">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-        
-        <div class="dot-container">
-            <span class="dot active-dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Über uns</h2>
-            <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-                <p>Wir sind eine dynamische Werbeagentur, die sich auf die Erstellung professioneller Websites und effektive Paid Advertising Kampagnen spezialisiert hat. Unser Ziel ist es, Ihnen dabei zu helfen, Ihre Online-Präsenz zu maximieren und Ihre Zielgruppe zu erreichen.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Unsere Dienstleistungen</h2>
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon" style="color: var(--accent-orange);">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Website-Erstellung</h3>
-                    <p>Wir erstellen professionelle, moderne und responsive Websites für Unternehmer. Maßgeschneiderte Lösungen, die Ihr Unternehmen optimal präsentieren.</p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon" style="color: var(--accent-red);">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Paid Advertising</h3>
-                    <p>Effektive Werbekampagnen auf Google, Facebook, Instagram und anderen Plattformen. Zielgenaue Ansprache Ihrer potenziellen Kunden.</p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon" style="color: var(--accent-orange);">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Digitale Strategie</h3>
-                    <p>Wir entwickeln ganzheitliche digitale Strategien, die Ihre Online-Präsenz stärken und Ihren Umsatz steigern.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Kontaktieren Sie uns</h2>
-            <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
-                <div class="alert alert-success" id="form-success">
-                    Vielen Dank für Ihre Nachricht! Wir werden uns so schnell wie möglich bei Ihnen melden.
-                </div>
-                <div class="alert alert-danger" id="form-error">
-                    Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.
-                </div>
-                <form id="contactForm" action="https://formspree.io/f/xwponvzq" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-Mail</label>
-                        <input type="email" name="_replyto" id="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefon</label>
-                        <input type="tel" name="phone" id="phone" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Nachricht</label>
-                        <textarea name="message" id="message" class="form-control" required></textarea>
-                    </div>
-                    <input type="hidden" name="_subject" value="Neue Anfrage von der AdWerk-Website">
-                    <input type="text" name="_gotcha" style="display:none">
-                    <input type="hidden" name="_next" value="#home">
-                    <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Absenden</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                
-<div class="logo" style="display: flex; align-items: center; gap: 10px;">
-  <img src="logo.png" alt="AdWerk Logo" style="height: 40px;">
-</div>
-
-            </div>
-            <ul class="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Über uns</a></li>
-                <li><a href="#services">Dienstleistungen</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            
-<li><a href="impressum.html">Impressum</a></li>
-<li><a href="datenschutz.html">Datenschutz</a></li>
-</ul>
-            <div class="copyright">
-                &copy; 2025 AdWerk. Alle Rechte vorbehalten.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cookie-Banner -->
-    <div id="cookieBanner" class="cookie-banner" style="display: none;">
-        <div class="cookie-main">
-            <div class="cookie-text">
-                <p>Wir verwenden Cookies, um Ihnen das bestmögliche Erlebnis auf unserer Website zu bieten. Sie können selbst entscheiden, welche Cookies Sie zulassen möchten. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-            </div>
-            <div class="cookie-buttons">
-                <button id="cookieMoreInfo" class="cookie-more">Mehr anzeigen</button>
-                <button id="acceptCookies" class="cookie-btn cookie-accept">Akzeptieren</button>
-                <button id="declineCookies" class="cookie-btn cookie-decline">Nicht akzeptieren</button>
-            </div>
-        </div>
-        <div id="cookieDetails" class="cookie-details">
-            <h4>Verwendete Cookies und übermittelte Daten</h4>
-            <p>Auf unserer Website kommen folgende Arten von Cookies zum Einsatz:</p>
-            <ul>
-                <li><strong>Notwendige Cookies:</strong> Diese Cookies sind für die grundlegende Funktionalität der Website erforderlich und können nicht deaktiviert werden.</li>
-                <li><strong>Analyse-Cookies:</strong> Diese Cookies ermöglichen es uns, Besuche zu zählen und Bewegungsmuster auf unserer Website zu analysieren. Wir nutzen Google Analytics, um zu verstehen, wie Benutzer mit unserer Website interagieren.</li>
-            </ul>
-            <h4>Folgende Daten werden an Google Analytics übermittelt:</h4>
-            <ul>
-                <li>Anonymisierte IP-Adresse</li>
-                <li>Informationen über Ihren Browser und Ihr Gerät</li>
-                <li>Besuchte Seiten und Ihre Interaktionen auf unserer Website</li>
-                <li>Verweildauer auf unserer Website</li>
-                <li>Verweisende Website oder Quelle, von der Sie unsere Website besucht haben</li>
-            </ul>
-            <p>Die erhobenen Daten werden verwendet, um unser Webangebot zu verbessern und Ihnen ein besseres Nutzererlebnis zu bieten. Wir verkaufen Ihre Daten nicht an Dritte und verwenden sie ausschließlich für die genannten Analysezwecke.</p>
-            <p>Weitere Informationen zu unseren Datenschutzpraktiken finden Sie in unserer Zur Zur Datenschutzerklärung.</p>
-            
-            <!-- Hier ist der neue Button zu Datenschutz -->
-            <a href="datenschutz.html" class="btn" style="display: inline-block; margin-top: 15px; font-size: 14px; padding: 8px 20px;">Datenschutz</a>
-        </div>
+    <div class="mySlides slide2">
+     <div class="slide-content">
+      <h1>
+       Kreative
+       <span>
+        Werbelösungen
+       </span>
+      </h1>
+      <p>
+       Von professionellen Websites bis hin zu effektiven Werbekampagnen - wir machen Ihr Unternehmen sichtbar.
+      </p>
+      <a class="btn" href="#services">
+       Unsere Leistungen
+      </a>
+     </div>
     </div>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Cookie-Banner-Funktionalität
+    <div class="mySlides slide3">
+     <div class="slide-content">
+      <h1>
+       <span>
+        Ad
+       </span>
+       Werk - Ihr Partner für digitales Marketing
+      </h1>
+      <p>
+       Mit uns steigern Sie Ihren Erfolg durch zielgerichtetes Online-Marketing und professionelle Web-Präsenz.
+      </p>
+      <a class="btn" href="#contact">
+       Kontakt aufnehmen
+      </a>
+     </div>
+    </div>
+   </div>
+   <!-- Slideshow arrows -->
+   <div class="slide-arrow prev-slide" id="prevSlide">
+    <i class="fas fa-chevron-left">
+    </i>
+   </div>
+   <div class="slide-arrow next-slide" id="nextSlide">
+    <i class="fas fa-chevron-right">
+    </i>
+   </div>
+   <div class="dot-container">
+    <span class="dot active-dot">
+    </span>
+    <span class="dot">
+    </span>
+    <span class="dot">
+    </span>
+   </div>
+  </section>
+  <!-- About Section -->
+  <section class="about" id="about">
+   <div class="container">
+    <h2 class="section-title" data-aos="fade-up">
+     Über uns
+    </h2>
+    <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+     <p>
+      Wir sind eine dynamische Werbeagentur, die sich auf die Erstellung professioneller Websites und effektive Paid Advertising Kampagnen spezialisiert hat. Unser Ziel ist es, Ihnen dabei zu helfen, Ihre Online-Präsenz zu maximieren und Ihre Zielgruppe zu erreichen.
+     </p>
+    </div>
+   </div>
+  </section>
+  <!-- Services Section -->
+  <section class="services" id="services">
+   <div class="container">
+    <h2 class="section-title" data-aos="fade-up">
+     Unsere Dienstleistungen
+    </h2>
+    <div class="services-grid">
+     <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-icon" style="color: var(--accent-orange);">
+       <i class="fas fa-laptop-code">
+       </i>
+      </div>
+      <h3>
+       Website-Erstellung
+      </h3>
+      <p>
+       Wir erstellen professionelle, moderne und responsive Websites für Unternehmer. Maßgeschneiderte Lösungen, die Ihr Unternehmen optimal präsentieren.
+      </p>
+     </div>
+     <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="service-icon" style="color: var(--accent-red);">
+       <i class="fas fa-chart-line">
+       </i>
+      </div>
+      <h3>
+       Paid Advertising
+      </h3>
+      <p>
+       Effektive Werbekampagnen auf Google, Facebook, Instagram und anderen Plattformen. Zielgenaue Ansprache Ihrer potenziellen Kunden.
+      </p>
+     </div>
+     <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-icon" style="color: var(--accent-orange);">
+       <i class="fas fa-rocket">
+       </i>
+      </div>
+      <h3>
+       Digitale Strategie
+      </h3>
+      <p>
+       Wir entwickeln ganzheitliche digitale Strategien, die Ihre Online-Präsenz stärken und Ihren Umsatz steigern.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+   <div class="container">
+    <h2 class="section-title" data-aos="fade-up">
+     Kontaktieren Sie uns
+    </h2>
+    <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
+     <div class="alert alert-success" id="form-success">
+      Vielen Dank für Ihre Nachricht! Wir werden uns so schnell wie möglich bei Ihnen melden.
+     </div>
+     <div class="alert alert-danger" id="form-error">
+      Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.
+     </div>
+     <form action="https://formspree.io/f/xwponvzq" id="contactForm" method="POST">
+      <div class="form-group">
+       <label for="name">
+        Name
+       </label>
+       <input class="form-control" id="name" name="name" required="" type="text"/>
+      </div>
+      <div class="form-group">
+       <label for="email">
+        E-Mail
+       </label>
+       <input class="form-control" id="email" name="_replyto" required="" type="email"/>
+      </div>
+      <div class="form-group">
+       <label for="phone">
+        Telefon
+       </label>
+       <input class="form-control" id="phone" name="phone" type="tel"/>
+      </div>
+      <div class="form-group">
+       <label for="message">
+        Nachricht
+       </label>
+       <textarea class="form-control" id="message" name="message" required=""></textarea>
+      </div>
+      <input name="_subject" type="hidden" value="Neue Anfrage von der AdWerk-Website"/>
+      <input name="_gotcha" style="display:none" type="text"/>
+      <input name="_next" type="hidden" value="#home"/>
+      <button class="btn" style="border: none; cursor: pointer; width: 100%;" type="submit">
+       Absenden
+      </button>
+     </form>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+   <div class="logo" style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 15px;">
+    <img alt="AdWerk Logo" src="logo.png" style="height: 40px;"/>
+    <span style="font-size: 24px; font-weight: bold;">
+     <span style="color: var(--accent-orange);">
+      Ad
+     </span>
+     <span style="color: var(--accent-red);">
+      Werk
+     </span>
+    </span>
+   </div>
+   <div class="container">
+    <div class="footer-content">
+    </div>
+    <ul class="footer-links">
+     <li>
+      <a href="#home">
+       Home
+      </a>
+     </li>
+     <li>
+      <a href="#about">
+       Über uns
+      </a>
+     </li>
+     <li>
+      <a href="#services">
+       Dienstleistungen
+      </a>
+     </li>
+     <li>
+      <a href="#contact">
+       Kontakt
+      </a>
+     </li>
+     <li>
+      <a href="impressum.html">
+       Impressum
+      </a>
+     </li>
+     <li>
+      <a href="datenschutz.html">
+       Datenschutz
+      </a>
+     </li>
+    </ul>
+    <div class="copyright">
+     © 2025 AdWerk. Alle Rechte vorbehalten.
+    </div>
+   </div>
+  </footer>
+  <!-- Cookie-Banner -->
+  <div class="cookie-banner" id="cookieBanner" style="display: none;">
+   <div class="cookie-main">
+    <div class="cookie-text">
+     <p>
+      Wir verwenden Cookies, um Ihnen das bestmögliche Erlebnis auf unserer Website zu bieten. Sie können selbst entscheiden, welche Cookies Sie zulassen möchten. Weitere Informationen finden Sie in unserer
+      <a href="datenschutz.html">
+       Datenschutzerklärung
+      </a>
+      .
+     </p>
+    </div>
+    <div class="cookie-buttons">
+     <button class="cookie-more" id="cookieMoreInfo">
+      Mehr anzeigen
+     </button>
+     <button class="cookie-btn cookie-accept" id="acceptCookies">
+      Akzeptieren
+     </button>
+     <button class="cookie-btn cookie-decline" id="declineCookies">
+      Nicht akzeptieren
+     </button>
+    </div>
+   </div>
+   <div class="cookie-details" id="cookieDetails">
+    <h4>
+     Verwendete Cookies und übermittelte Daten
+    </h4>
+    <p>
+     Auf unserer Website kommen folgende Arten von Cookies zum Einsatz:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Notwendige Cookies:
+      </strong>
+      Diese Cookies sind für die grundlegende Funktionalität der Website erforderlich und können nicht deaktiviert werden.
+     </li>
+     <li>
+      <strong>
+       Analyse-Cookies:
+      </strong>
+      Diese Cookies ermöglichen es uns, Besuche zu zählen und Bewegungsmuster auf unserer Website zu analysieren. Wir nutzen Google Analytics, um zu verstehen, wie Benutzer mit unserer Website interagieren.
+     </li>
+    </ul>
+    <h4>
+     Folgende Daten werden an Google Analytics übermittelt:
+    </h4>
+    <ul>
+     <li>
+      Anonymisierte IP-Adresse
+     </li>
+     <li>
+      Informationen über Ihren Browser und Ihr Gerät
+     </li>
+     <li>
+      Besuchte Seiten und Ihre Interaktionen auf unserer Website
+     </li>
+     <li>
+      Verweildauer auf unserer Website
+     </li>
+     <li>
+      Verweisende Website oder Quelle, von der Sie unsere Website besucht haben
+     </li>
+    </ul>
+    <p>
+     Die erhobenen Daten werden verwendet, um unser Webangebot zu verbessern und Ihnen ein besseres Nutzererlebnis zu bieten. Wir verkaufen Ihre Daten nicht an Dritte und verwenden sie ausschließlich für die genannten Analysezwecke.
+    </p>
+    <p>
+     Weitere Informationen zu unseren Datenschutzpraktiken finden Sie in unserer Zur Zur Datenschutzerklärung.
+    </p>
+    <!-- Hier ist der neue Button zu Datenschutz -->
+    <a class="btn" href="datenschutz.html" style="display: inline-block; margin-top: 15px; font-size: 14px; padding: 8px 20px;">
+     Datenschutz
+    </a>
+   </div>
+  </div>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js">
+  </script>
+  <script>
+   // Cookie-Banner-Funktionalität
         document.addEventListener('DOMContentLoaded', function() {
             // AOS initialisieren
             AOS.init({
@@ -1466,6 +1635,6 @@
                 }, 3000);
             });
         });
-    </script>
-</body>
+  </script>
+ </body>
 </html>
