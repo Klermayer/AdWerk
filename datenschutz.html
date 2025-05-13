@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-
-<html data-theme="light" lang="de">
+<html lang="de" data-theme="light">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Datenschutzerklärung - AdWerk</title>
-<!-- Dieselben Stylesheets wie auf der Hauptseite -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung - AdWerk</title>
+    
+    <!-- Dieselben Stylesheets wie auf der Hauptseite -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
         :root {
             /* Light Theme (Default) */
             --primary-bg: #ffffff;
@@ -481,152 +481,171 @@
     </style>
 </head>
 <body>
-<!-- Header -->
-<header>
-<div class="container">
-<nav>
-<div class="logo">Ad<span>Werk</span></div>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="index.html#about">Über uns</a></li>
-<li><a href="index.html#services">Dienstleistungen</a></li>
-<li><a href="index.html#contact">Kontakt</a></li>
-<li>
-<button aria-label="Theme umschalten" class="theme-toggle" id="themeToggle">
-<i class="fas fa-sun"></i>
-</button>
-</li>
-</ul>
-<div class="right-controls">
-<button aria-label="Theme umschalten" class="mobile-theme-toggle" id="mobileThemeToggle">
-<i class="fas fa-sun"></i>
-</button>
-<button aria-label="Menü öffnen" class="menu-btn" id="menuBtn">
-<i class="fas fa-bars"></i>
-</button>
-</div>
-</nav>
-</div>
-</header>
-<!-- Mobile Menu -->
-<div class="overlay" id="overlay"></div>
-<div class="mobile-menu" id="mobileMenu">
-<button aria-label="Menü schließen" class="close-menu" id="closeMenu">
-<i class="fas fa-times"></i>
-</button>
-<ul class="mobile-nav">
-<li><a href="index.html">Home</a></li>
-<li><a href="index.html#about">Über uns</a></li>
-<li><a href="index.html#services">Dienstleistungen</a></li>
-<li><a href="index.html#contact">Kontakt</a></li>
-<li><a href="datenschutz.html">Datenschutz</a></li>
-<li><a href="impressum.html">Impressum</a></li>
-</ul>
-</div>
-<!-- Datenschutz Content -->
-<div class="container">
-<div class="privacy-content">
-<h1>Datenschutzerklärung</h1>
-<a class="back-btn" href="index.html"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
-<h2>1. Allgemeine Informationen</h2>
-<p>Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer Privatsphäre ist für uns sehr wichtig. Nachfolgend informieren wir Sie ausführlich über den Umgang mit Ihren Daten.</p>
-<h3>1.1 Verantwortliche Stelle</h3>
-<p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
-<p>
-<strong>AdWerk GmbH</strong><br/>
-                Musterstraße 123<br/>
-                1010 Wien<br/>
-                Österreich<br/><br/>
-                Telefon: +43 1 234 56789<br/>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Ad<span>Werk</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">Über uns</a></li>
+                    <li><a href="index.html#services">Dienstleistungen</a></li>
+                    <li><a href="index.html#contact">Kontakt</a></li>
+                    <li>
+                        <button id="themeToggle" class="theme-toggle" aria-label="Theme umschalten">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </li>
+                </ul>
+                <div class="right-controls">
+                    <button id="mobileThemeToggle" class="mobile-theme-toggle" aria-label="Theme umschalten">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button id="menuBtn" class="menu-btn" aria-label="Menü öffnen">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu" aria-label="Menü schließen">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">Über uns</a></li>
+            <li><a href="index.html#services">Dienstleistungen</a></li>
+            <li><a href="index.html#contact">Kontakt</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </div>
+
+    <!-- Datenschutz Content -->
+    <div class="container">
+        <div class="privacy-content">
+            <h1>Datenschutzerklärung</h1>
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
+            
+            <h2>1. Allgemeine Informationen</h2>
+            <p>Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer Privatsphäre ist für uns sehr wichtig. Nachfolgend informieren wir Sie ausführlich über den Umgang mit Ihren Daten.</p>
+            
+            <h3>1.1 Verantwortliche Stelle</h3>
+            <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+            <p>
+                <strong>AdWerk GmbH</strong><br>
+                Musterstraße 123<br>
+                1010 Wien<br>
+                Österreich<br><br>
+                Telefon: +43 1 234 56789<br>
                 E-Mail: info@adwerk.at
             </p>
-<h3>1.2 Datenschutzbeauftragter</h3>
-<p>Unseren Datenschutzbeauftragten erreichen Sie unter:</p>
-<p>
-                E-Mail: datenschutz@adwerk.at<br/>
+            
+            <h3>1.2 Datenschutzbeauftragter</h3>
+            <p>Unseren Datenschutzbeauftragten erreichen Sie unter:</p>
+            <p>
+                E-Mail: datenschutz@adwerk.at<br>
                 Telefon: +43 1 234 56789
             </p>
-<h2>2. Ihre Rechte</h2>
-<p>Sie haben folgende Rechte bezüglich der Sie betreffenden personenbezogenen Daten:</p>
-<ul>
-<li><strong>Recht auf Auskunft</strong> (Art. 15 DSGVO)</li>
-<li><strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO)</li>
-<li><strong>Recht auf Löschung</strong> (Art. 17 DSGVO)</li>
-<li><strong>Recht auf Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
-<li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
-<li><strong>Recht auf Widerspruch gegen die Verarbeitung</strong> (Art. 21 DSGVO)</li>
-<li><strong>Recht auf Widerruf der datenschutzrechtlichen Einwilligungserklärung</strong> (Art. 7 Abs. 3 DSGVO)</li>
-<li><strong>Recht auf Beschwerde bei einer Aufsichtsbehörde</strong> (Art. 77 DSGVO)</li>
-</ul>
-<h2>3. Datenerfassung auf unserer Website</h2>
-<h3>3.1 Beim Besuch unserer Website</h3>
-<p>Bei der rein informatorischen Nutzung unserer Website, also wenn Sie sich nicht registrieren oder uns anderweitig Informationen übermitteln, erheben wir nur solche Daten, die Ihr Browser an unseren Server übermittelt (sog. "Server-Logfiles"). Wenn Sie unsere Website aufrufen, erheben wir die folgenden Daten, die für uns technisch erforderlich sind, um Ihnen die Website anzuzeigen:</p>
-<ul>
-<li>Besuchte Website</li>
-<li>Datum und Uhrzeit zum Zeitpunkt des Zugriffes</li>
-<li>Menge der gesendeten Daten in Byte</li>
-<li>Quelle/Verweis, von welchem Sie auf die Seite gelangten</li>
-<li>Verwendeter Browser</li>
-<li>Verwendetes Betriebssystem</li>
-<li>Verwendete IP-Adresse (ggf. anonymisiert)</li>
-</ul>
-<p>Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf Basis unseres berechtigten Interesses an der Verbesserung der Stabilität und Funktionalität unserer Website. Eine Weitergabe oder anderweitige Verwendung der Daten findet nicht statt. Wir behalten uns allerdings vor, die Server-Logfiles nachträglich zu überprüfen, sollten konkrete Anhaltspunkte auf eine rechtswidrige Nutzung hinweisen.</p>
-<h3>3.2 Bei Nutzung unseres Kontaktformulars</h3>
-<p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-<p>Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.</p>
-<p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
-<h2>4. Cookies und Analysetools</h2>
-<h3>4.1 Cookies</h3>
-<p>Unsere Website verwendet Cookies. Hierbei handelt es sich um kleine Dateien, die Ihr Browser automatisch erstellt und die auf Ihrem Endgerät (Laptop, Tablet, Smartphone o.ä.) gespeichert werden, wenn Sie unsere Website besuchen. Cookies richten auf Ihrem Endgerät keinen Schaden an, enthalten keine Viren, Trojaner oder sonstige Schadsoftware.</p>
-<p>In dem Cookie werden Informationen abgelegt, die sich jeweils im Zusammenhang mit dem spezifisch eingesetzten Endgerät ergeben. Dies bedeutet jedoch nicht, dass wir dadurch unmittelbar Kenntnis von Ihrer Identität erhalten.</p>
-<p>Der Einsatz von Cookies dient einerseits dazu, die Nutzung unseres Angebots für Sie angenehmer zu gestalten. So setzen wir sogenannte Session-Cookies ein, um zu erkennen, dass Sie einzelne Seiten unserer Website bereits besucht haben. Diese werden nach Verlassen unserer Seite automatisch gelöscht.</p>
-<p>Darüber hinaus setzen wir ebenfalls zur Optimierung der Benutzerfreundlichkeit temporäre Cookies ein, die für einen bestimmten festgelegten Zeitraum auf Ihrem Endgerät gespeichert werden. Besuchen Sie unsere Seite erneut, um unsere Dienste in Anspruch zu nehmen, wird automatisch erkannt, dass Sie bereits bei uns waren und welche Eingaben und Einstellungen sie getätigt haben, um diese nicht noch einmal eingeben zu müssen.</p>
-<p>Die durch Cookies verarbeiteten Daten sind für die genannten Zwecke zur Wahrung unserer berechtigten Interessen sowie der Dritter nach Art. 6 Abs. 1 S. 1 lit. f DSGVO erforderlich.</p>
-<p>Die meisten Browser akzeptieren Cookies automatisch. Sie können Ihren Browser jedoch so konfigurieren, dass keine Cookies auf Ihrem Computer gespeichert werden oder stets ein Hinweis erscheint, bevor ein neuer Cookie angelegt wird. Die vollständige Deaktivierung von Cookies kann jedoch dazu führen, dass Sie nicht alle Funktionen unserer Website nutzen können.</p>
-<h3>4.2 Google Analytics</h3>
-<p>Unsere Website nutzt Google Analytics, einen Webanalysedienst der Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google"). Google Analytics verwendet sog. "Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen.</p>
-<p>Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.</p>
-<p>Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.</p>
-<p>Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>.</p>
-<p>Wir verwenden Google Analytics mit der Erweiterung "_anonymizeIp()". Dadurch werden IP-Adressen gekürzt weiterverarbeitet und eine direkte Personenbeziehbarkeit kann so ausgeschlossen werden. Soweit den über Sie erhobenen Daten ein Personenbezug zukommt, wird dieser also sofort ausgeschlossen und die personenbezogenen Daten damit umgehend gelöscht.</p>
-<p>Wir nutzen Google Analytics, um die Nutzung unserer Website analysieren und regelmäßig verbessern zu können. Über die gewonnenen Statistiken können wir unser Angebot verbessern und für Sie als Nutzer interessanter ausgestalten. Für die Ausnahmefälle, in denen personenbezogene Daten in die USA übertragen werden, hat sich Google dem EU-US Privacy Shield unterworfen, <a href="https://www.privacyshield.gov/EU-US-Framework" target="_blank">https://www.privacyshield.gov/EU-US-Framework</a>.</p>
-<p>Rechtsgrundlage für die Nutzung von Google Analytics ist Art. 6 Abs. 1 S. 1 lit. f DSGVO.</p>
-<p>Informationen des Drittanbieters: Google Dublin, Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Ireland, Fax: +353 (1) 436 1001. Nutzerbedingungen: <a href="https://www.google.com/analytics/terms/de.html" target="_blank">https://www.google.com/analytics/terms/de.html</a>, Übersicht zum Datenschutz: <a href="https://www.google.com/intl/de/analytics/learn/privacy.html" target="_blank">https://www.google.com/intl/de/analytics/learn/privacy.html</a>, sowie die Datenschutzerklärung: <a href="https://www.google.de/intl/de/policies/privacy" target="_blank">https://www.google.de/intl/de/policies/privacy</a>.</p>
-<h2>5. Soziale Medien</h2>
-<p>Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke, um mit den dort aktiven Kunden und Interessenten kommunizieren und sie dort über unsere Dienste informieren zu können. Beim Besuch dieser Onlinepräsenzen können Daten über den Nutzer verarbeitet werden, die über die Grenzen der Europäischen Union hinaus verarbeitet werden können. Dies kann für die Betroffenen Risiken bergen, da z.B. die Durchsetzung von Betroffenenrechten erschwert werden könnte. Wir weisen darauf hin, dass US-Anbieter, die unter dem Privacy-Shield zertifiziert sind, sich verpflichten, die Datenschutzstandards der EU einzuhalten.</p>
-<p>Wir haben keine Kontrolle über die Datenerhebung und deren weitere Verarbeitung im Falle von sozialen Netzwerken. Es ist nicht ausgeschlossen, dass Anbieter die Daten für eigene Zwecke, z.B. Profiling, verwenden und mit anderen Daten, z.B. Nutzungsdaten anderer Plattformen, verknüpfen.</p>
-<h2>6. Dauer der Speicherung</h2>
-<p>Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Für die personenbezogenen Daten, die per E-Mail oder über das Kontaktformular übersandt wurden, ist dies dann der Fall, wenn die jeweilige Konversation mit dem Nutzer beendet ist. Beendet ist die Konversation dann, wenn sich aus den Umständen entnehmen lässt, dass der betroffene Sachverhalt abschließend geklärt ist.</p>
-<h2>7. Sicherheit</h2>
-<p>Wir bedienen uns im Übrigen geeigneter technischer und organisatorischer Sicherheitsmaßnahmen, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen Entwicklung fortlaufend verbessert.</p>
-<h2>8. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
-<p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Mai 2025.</p>
-<p>Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf der Website unter <a href="datenschutz.html">https://www.adwerk.at/datenschutz.html</a> von Ihnen abgerufen und ausgedruckt werden.</p>
-<a class="back-btn" href="index.html"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
-</div>
-</div>
-<!-- Footer -->
-<footer>
-<div class="container">
-<div class="footer-content">
-<div class="logo">Ad<span>Werk</span></div>
-</div>
-<ul class="footer-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="index.html#about">Über uns</a></li>
-<li><a href="index.html#services">Dienstleistungen</a></li>
-<li><a href="index.html#contact">Kontakt</a></li>
-<li><a href="datenschutz.html">Datenschutz</a></li>
-<li><a href="impressum.html">Impressum</a></li>
-</ul>
-<div class="copyright">
-                © 2025 AdWerk. Alle Rechte vorbehalten.
+            
+            <h2>2. Ihre Rechte</h2>
+            <p>Sie haben folgende Rechte bezüglich der Sie betreffenden personenbezogenen Daten:</p>
+            <ul>
+                <li><strong>Recht auf Auskunft</strong> (Art. 15 DSGVO)</li>
+                <li><strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO)</li>
+                <li><strong>Recht auf Löschung</strong> (Art. 17 DSGVO)</li>
+                <li><strong>Recht auf Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+                <li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+                <li><strong>Recht auf Widerspruch gegen die Verarbeitung</strong> (Art. 21 DSGVO)</li>
+                <li><strong>Recht auf Widerruf der datenschutzrechtlichen Einwilligungserklärung</strong> (Art. 7 Abs. 3 DSGVO)</li>
+                <li><strong>Recht auf Beschwerde bei einer Aufsichtsbehörde</strong> (Art. 77 DSGVO)</li>
+            </ul>
+            
+            <h2>3. Datenerfassung auf unserer Website</h2>
+            
+            <h3>3.1 Beim Besuch unserer Website</h3>
+            <p>Bei der rein informatorischen Nutzung unserer Website, also wenn Sie sich nicht registrieren oder uns anderweitig Informationen übermitteln, erheben wir nur solche Daten, die Ihr Browser an unseren Server übermittelt (sog. "Server-Logfiles"). Wenn Sie unsere Website aufrufen, erheben wir die folgenden Daten, die für uns technisch erforderlich sind, um Ihnen die Website anzuzeigen:</p>
+            <ul>
+                <li>Besuchte Website</li>
+                <li>Datum und Uhrzeit zum Zeitpunkt des Zugriffes</li>
+                <li>Menge der gesendeten Daten in Byte</li>
+                <li>Quelle/Verweis, von welchem Sie auf die Seite gelangten</li>
+                <li>Verwendeter Browser</li>
+                <li>Verwendetes Betriebssystem</li>
+                <li>Verwendete IP-Adresse (ggf. anonymisiert)</li>
+            </ul>
+            <p>Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf Basis unseres berechtigten Interesses an der Verbesserung der Stabilität und Funktionalität unserer Website. Eine Weitergabe oder anderweitige Verwendung der Daten findet nicht statt. Wir behalten uns allerdings vor, die Server-Logfiles nachträglich zu überprüfen, sollten konkrete Anhaltspunkte auf eine rechtswidrige Nutzung hinweisen.</p>
+            
+            <h3>3.2 Bei Nutzung unseres Kontaktformulars</h3>
+            <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+            <p>Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.</p>
+            <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+            
+            <h2>4. Cookies und Analysetools</h2>
+            
+            <h3>4.1 Cookies</h3>
+            <p>Unsere Website verwendet Cookies. Hierbei handelt es sich um kleine Dateien, die Ihr Browser automatisch erstellt und die auf Ihrem Endgerät (Laptop, Tablet, Smartphone o.ä.) gespeichert werden, wenn Sie unsere Website besuchen. Cookies richten auf Ihrem Endgerät keinen Schaden an, enthalten keine Viren, Trojaner oder sonstige Schadsoftware.</p>
+            <p>In dem Cookie werden Informationen abgelegt, die sich jeweils im Zusammenhang mit dem spezifisch eingesetzten Endgerät ergeben. Dies bedeutet jedoch nicht, dass wir dadurch unmittelbar Kenntnis von Ihrer Identität erhalten.</p>
+            <p>Der Einsatz von Cookies dient einerseits dazu, die Nutzung unseres Angebots für Sie angenehmer zu gestalten. So setzen wir sogenannte Session-Cookies ein, um zu erkennen, dass Sie einzelne Seiten unserer Website bereits besucht haben. Diese werden nach Verlassen unserer Seite automatisch gelöscht.</p>
+            <p>Darüber hinaus setzen wir ebenfalls zur Optimierung der Benutzerfreundlichkeit temporäre Cookies ein, die für einen bestimmten festgelegten Zeitraum auf Ihrem Endgerät gespeichert werden. Besuchen Sie unsere Seite erneut, um unsere Dienste in Anspruch zu nehmen, wird automatisch erkannt, dass Sie bereits bei uns waren und welche Eingaben und Einstellungen sie getätigt haben, um diese nicht noch einmal eingeben zu müssen.</p>
+            <p>Die durch Cookies verarbeiteten Daten sind für die genannten Zwecke zur Wahrung unserer berechtigten Interessen sowie der Dritter nach Art. 6 Abs. 1 S. 1 lit. f DSGVO erforderlich.</p>
+            <p>Die meisten Browser akzeptieren Cookies automatisch. Sie können Ihren Browser jedoch so konfigurieren, dass keine Cookies auf Ihrem Computer gespeichert werden oder stets ein Hinweis erscheint, bevor ein neuer Cookie angelegt wird. Die vollständige Deaktivierung von Cookies kann jedoch dazu führen, dass Sie nicht alle Funktionen unserer Website nutzen können.</p>
+            
+            <h3>4.2 Google Analytics</h3>
+            <p>Unsere Website nutzt Google Analytics, einen Webanalysedienst der Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google"). Google Analytics verwendet sog. "Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen.</p>
+            <p>Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.</p>
+            <p>Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.</p>
+            <p>Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>.</p>
+            <p>Wir verwenden Google Analytics mit der Erweiterung "_anonymizeIp()". Dadurch werden IP-Adressen gekürzt weiterverarbeitet und eine direkte Personenbeziehbarkeit kann so ausgeschlossen werden. Soweit den über Sie erhobenen Daten ein Personenbezug zukommt, wird dieser also sofort ausgeschlossen und die personenbezogenen Daten damit umgehend gelöscht.</p>
+            <p>Wir nutzen Google Analytics, um die Nutzung unserer Website analysieren und regelmäßig verbessern zu können. Über die gewonnenen Statistiken können wir unser Angebot verbessern und für Sie als Nutzer interessanter ausgestalten. Für die Ausnahmefälle, in denen personenbezogene Daten in die USA übertragen werden, hat sich Google dem EU-US Privacy Shield unterworfen, <a href="https://www.privacyshield.gov/EU-US-Framework" target="_blank">https://www.privacyshield.gov/EU-US-Framework</a>.</p>
+            <p>Rechtsgrundlage für die Nutzung von Google Analytics ist Art. 6 Abs. 1 S. 1 lit. f DSGVO.</p>
+            <p>Informationen des Drittanbieters: Google Dublin, Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Ireland, Fax: +353 (1) 436 1001. Nutzerbedingungen: <a href="https://www.google.com/analytics/terms/de.html" target="_blank">https://www.google.com/analytics/terms/de.html</a>, Übersicht zum Datenschutz: <a href="https://www.google.com/intl/de/analytics/learn/privacy.html" target="_blank">https://www.google.com/intl/de/analytics/learn/privacy.html</a>, sowie die Datenschutzerklärung: <a href="https://www.google.de/intl/de/policies/privacy" target="_blank">https://www.google.de/intl/de/policies/privacy</a>.</p>
+            
+            <h2>5. Soziale Medien</h2>
+            <p>Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke, um mit den dort aktiven Kunden und Interessenten kommunizieren und sie dort über unsere Dienste informieren zu können. Beim Besuch dieser Onlinepräsenzen können Daten über den Nutzer verarbeitet werden, die über die Grenzen der Europäischen Union hinaus verarbeitet werden können. Dies kann für die Betroffenen Risiken bergen, da z.B. die Durchsetzung von Betroffenenrechten erschwert werden könnte. Wir weisen darauf hin, dass US-Anbieter, die unter dem Privacy-Shield zertifiziert sind, sich verpflichten, die Datenschutzstandards der EU einzuhalten.</p>
+            <p>Wir haben keine Kontrolle über die Datenerhebung und deren weitere Verarbeitung im Falle von sozialen Netzwerken. Es ist nicht ausgeschlossen, dass Anbieter die Daten für eigene Zwecke, z.B. Profiling, verwenden und mit anderen Daten, z.B. Nutzungsdaten anderer Plattformen, verknüpfen.</p>
+            
+            <h2>6. Dauer der Speicherung</h2>
+            <p>Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Für die personenbezogenen Daten, die per E-Mail oder über das Kontaktformular übersandt wurden, ist dies dann der Fall, wenn die jeweilige Konversation mit dem Nutzer beendet ist. Beendet ist die Konversation dann, wenn sich aus den Umständen entnehmen lässt, dass der betroffene Sachverhalt abschließend geklärt ist.</p>
+            
+            <h2>7. Sicherheit</h2>
+            <p>Wir bedienen uns im Übrigen geeigneter technischer und organisatorischer Sicherheitsmaßnahmen, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen Entwicklung fortlaufend verbessert.</p>
+            
+            <h2>8. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
+            <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Mai 2025.</p>
+            <p>Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf der Website unter <a href="datenschutz.html">https://www.adwerk.at/datenschutz.html</a> von Ihnen abgerufen und ausgedruckt werden.</p>
+            
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Ad<span>Werk</span></div>
             </div>
-</div>
-</footer>
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">Über uns</a></li>
+                <li><a href="index.html#services">Dienstleistungen</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+                <li><a href="datenschutz.html">Datenschutz</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2025 AdWerk. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             // AOS initialisieren
             AOS.init({
@@ -754,311 +773,4 @@
         });
     </script>
 </body>
-</html> an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>.
-<p>Wir verwenden Google Analytics mit der Erweiterung "_anonymizeIp()". Dadurch werden IP-Adressen gekürzt weiterverarbeitet und eine direkte Personenbeziehbarkeit kann so ausgeschlossen werden. Soweit den über Sie erhobenen Daten ein Personenbezug zukommt, wird dieser also sofort ausgeschlossen und die personenbezogenen Daten damit umgehend gelöscht.</p>
-<p>Wir nutzen Google Analytics, um die Nutzung unserer Website analysieren und regelmäßig verbessern zu können. Über die gewonnenen Statistiken können wir unser Angebot verbessern und für Sie als Nutzer interessanter ausgestalten. Für die Ausnahmefälle, in denen personenbezogene Daten in die USA übertragen werden, hat sich Google dem EU-US Privacy Shield unterworfen, <a href="https://www.privacyshield.gov/EU-US-Framework" target="_blank">https://www.privacyshield.gov/EU-US-Framework</a>.</p>
-<p>Rechtsgrundlage für die Nutzung von Google Analytics ist Art. 6 Abs. 1 S. 1 lit. f DSGVO.</p>
-<p>Informationen des Drittanbieters: Google Dublin, Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Ireland, Fax: +353 (1) 436 1001. Nutzerbedingungen: <a href="https://www.google.com/analytics/terms/de.html" target="_blank">https://www.google.com/analytics/terms/de.html</a>, Übersicht zum Datenschutz: <a href="https://www.google.com/intl/de/analytics/learn/privacy.html" target="_blank">https://www.google.com/intl/de/analytics/learn/privacy.html</a>, sowie die Datenschutzerklärung: <a href="https://www.google.de/intl/de/policies/privacy" target="_blank">https://www.google.de/intl/de/policies/privacy</a>.</p>
-<h2>5. Soziale Medien</h2>
-<p>Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke, um mit den dort aktiven Kunden und Interessenten kommunizieren und sie dort über unsere Dienste informieren zu können. Beim Besuch dieser Onlinepräsenzen können Daten über den Nutzer verarbeitet werden, die über die Grenzen der Europäischen Union hinaus verarbeitet werden können. Dies kann für die Betroffenen Risiken bergen, da z.B. die Durchsetzung von Betroffenenrechten erschwert werden könnte. Wir weisen darauf hin, dass US-Anbieter, die unter dem Privacy-Shield zertifiziert sind, sich verpflichten, die Datenschutzstandards der EU einzuhalten.</p>
-<p>Wir haben keine Kontrolle über die Datenerhebung und deren weitere Verarbeitung im Falle von sozialen Netzwerken. Es ist nicht ausgeschlossen, dass Anbieter die Daten für eigene Zwecke, z.B. Profiling, verwenden und mit anderen Daten, z.B. Nutzungsdaten anderer Plattformen, verknüpfen.</p>
-<h2>6. Dauer der Speicherung</h2>
-<p>Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Für die personenbezogenen Daten, die per E-Mail oder über das Kontaktformular übersandt wurden, ist dies dann der Fall, wenn die jeweilige Konversation mit dem Nutzer beendet ist. Beendet ist die Konversation dann, wenn sich aus den Umständen entnehmen lässt, dass der betroffene Sachverhalt abschließend geklärt ist.</p>
-<h2>7. Sicherheit</h2>
-<p>Wir bedienen uns im Übrigen geeigneter technischer und organisatorischer Sicherheitsmaßnahmen, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen Entwicklung fortlaufend verbessert.</p>
-<h2>8. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
-<p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Mai 2025.</p>
-<p>Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf der Website unter <a href="datenschutz.html">https://www.adwerk.at/datenschutz.html</a> von Ihnen abgerufen und ausgedruckt werden.</p>
-<a class="back-btn" href="index.html"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
-
-
-<!-- Footer -->
-
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // AOS initialisieren
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-            
-            // Theme Toggle
-            const themeToggleDesktop = document.getElementById('themeToggle');
-            const themeToggleMobile = document.getElementById('mobileThemeToggle');
-            const htmlElement = document.documentElement;
-            
-            // Gespeichertes Theme laden oder Standard (light) setzen
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            htmlElement.dataset.theme = savedTheme;
-            
-            // Icons aktualisieren
-            if (savedTheme === 'dark') {
-                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = 'fas fa-moon';
-                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = 'fas fa-moon';
-            } else {
-                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = 'fas fa-sun';
-                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = 'fas fa-sun';
-            }
-            
-            // Theme Toggle Funktion
-            function toggleTheme() {
-                const currentTheme = htmlElement.dataset.theme;
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                
-                htmlElement.dataset.theme = newTheme;
-                localStorage.setItem('theme', newTheme);
-                
-                // Icons aktualisieren
-                const newIcon = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = newIcon;
-                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = newIcon;
-            }
-            
-            // Event-Listener zu Theme-Toggles hinzufügen
-            if (themeToggleDesktop) {
-                themeToggleDesktop.addEventListener('click', toggleTheme);
-            }
-            
-            if (themeToggleMobile) {
-                themeToggleMobile.addEventListener('click', toggleTheme);
-            }
-
-            // Mobile Menü
-            const menuBtn = document.getElementById('menuBtn');
-            const closeBtn = document.getElementById('closeMenu');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const overlay = document.getElementById('overlay');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-            
-            // Menü öffnen
-            if (menuBtn) {
-                menuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.add('active');
-                    overlay.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                });
-            }
-            
-            // Menü schließen
-            function closeMenu() {
-                mobileMenu.classList.remove('active');
-                overlay.style.display = 'none';
-                document.body.style.overflow = '';
-            }
-            
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeMenu);
-            }
-            
-            if (overlay) {
-                overlay.addEventListener('click', closeMenu);
-            }
-            
-            // Menü schließen bei Klick auf einen Link
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', closeMenu);
-            });
-            
-            // Zusätzlicher Event-Listener für Touch-Events auf mobilen Geräten
-            if ('ontouchstart' in window) {
-                // Behandlung von Touch-Ereignissen
-                document.querySelectorAll('a, button').forEach(element => {
-                    element.addEventListener('touchstart', function() {
-                        this.classList.add('touch-active');
-                    });
-                    
-                    element.addEventListener('touchend', function() {
-                        this.classList.remove('touch-active');
-                    });
-                });
-            }
-        });
-        
-        // Sanftes Scrollen für Anker-Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    // Schließe das mobile Menü, wenn es geöffnet ist
-                    const mobileMenu = document.getElementById('mobileMenu');
-                    const overlay = document.getElementById('overlay');
-                    
-                    if (mobileMenu && mobileMenu.classList.contains('active')) {
-                        mobileMenu.classList.remove('active');
-                        if (overlay) overlay.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
-                }
-            });
-        });
-    </script>
-
- dazu, die Nutzung unseres Angebots für Sie angenehmer zu gestalten. So setzen wir sogenannte Session-Cookies ein, um zu erkennen, dass Sie einzelne Seiten unserer Website bereits besucht haben. Diese werden nach Verlassen unserer Seite automatisch gelöscht.
-<p>Darüber hinaus setzen wir ebenfalls zur Optimierung der Benutzerfreundlichkeit temporäre Cookies ein, die für einen bestimmten festgelegten Zeitraum auf Ihrem Endgerät gespeichert werden. Besuchen Sie unsere Seite erneut, um unsere Dienste in Anspruch zu nehmen, wird automatisch erkannt, dass Sie bereits bei uns waren und welche Eingaben und Einstellungen sie getätigt haben, um diese nicht noch einmal eingeben zu müssen.</p>
-<p>Die durch Cookies verarbeiteten Daten sind für die genannten Zwecke zur Wahrung unserer berechtigten Interessen sowie der Dritter nach Art. 6 Abs. 1 S. 1 lit. f DSGVO erforderlich.</p>
-<p>Die meisten Browser akzeptieren Cookies automatisch. Sie können Ihren Browser jedoch so konfigurieren, dass keine Cookies auf Ihrem Computer gespeichert werden oder stets ein Hinweis erscheint, bevor ein neuer Cookie angelegt wird. Die vollständige Deaktivierung von Cookies kann jedoch dazu führen, dass Sie nicht alle Funktionen unserer Website nutzen können.</p>
-<h3>4.2 Google Analytics</h3>
-<p>Unsere Website nutzt Google Analytics, einen Webanalysedienst der Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google"). Google Analytics verwendet sog. "Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen.</p>
-<p>Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.</p>
-<p>Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.</p>
-<p>Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>.</p>
-<p>Wir verwenden Google Analytics mit der Erweiterung "_anonymizeIp()". Dadurch werden IP-Adressen gekürzt weiterverarbeitet und eine direkte Personenbeziehbarkeit kann so ausgeschlossen werden. Soweit den über Sie erhobenen Daten ein Personenbezug zukommt, wird dieser also sofort ausgeschlossen und die personenbezogenen Daten damit umgehend gelöscht.</p>
-<p>Wir nutzen Google Analytics, um die Nutzung unserer Website analysieren und regelmäßig verbessern zu können. Über die gewonnenen Statistiken können wir unser Angebot verbessern und für Sie als Nutzer interessanter ausgestalten. Für die Ausnahmefälle, in denen personenbezogene Daten in die USA übertragen werden, hat sich Google dem EU-US Privacy Shield unterworfen, <a href="https://www.privacyshield.gov/EU-US-Framework" target="_blank">https://www.privacyshield.gov/EU-US-Framework</a>.</p>
-<p>Rechtsgrundlage für die Nutzung von Google Analytics ist Art. 6 Abs. 1 S. 1 lit. f DSGVO.</p>
-<p>Informationen des Drittanbieters: Google Dublin, Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Ireland, Fax: +353 (1) 436 1001. Nutzerbedingungen: <a href="https://www.google.com/analytics/terms/de.html" target="_blank">https://www.google.com/analytics/terms/de.html</a>, Übersicht zum Datenschutz: <a href="https://www.google.com/intl/de/analytics/learn/privacy.html" target="_blank">https://www.google.com/intl/de/analytics/learn/privacy.html</a>, sowie die Datenschutzerklärung: <a href="https://www.google.de/intl/de/policies/privacy" target="_blank">https://www.google.de/intl/de/policies/privacy</a>.</p>
-<h2>5. Soziale Medien</h2>
-<p>Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke, um mit den dort aktiven Kunden und Interessenten kommunizieren und sie dort über unsere Dienste informieren zu können. Beim Besuch dieser Onlinepräsenzen können Daten über den Nutzer verarbeitet werden, die über die Grenzen der Europäischen Union hinaus verarbeitet werden können. Dies kann für die Betroffenen Risiken bergen, da z.B. die Durchsetzung von Betroffenenrechten erschwert werden könnte. Wir weisen darauf hin, dass US-Anbieter, die unter dem Privacy-Shield zertifiziert sind, sich verpflichten, die Datenschutzstandards der EU einzuhalten.</p>
-<p>Wir haben keine Kontrolle über die Datenerhebung und deren weitere Verarbeitung im Falle von sozialen Netzwerken. Es ist nicht ausgeschlossen, dass Anbieter die Daten für eigene Zwecke, z.B. Profiling, verwenden und mit anderen Daten, z.B. Nutzungsdaten anderer Plattformen, verknüpfen.</p>
-<h2>6. Dauer der Speicherung</h2>
-<p>Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Für die personenbezogenen Daten, die per E-Mail oder über das Kontaktformular übersandt wurden, ist dies dann der Fall, wenn die jeweilige Konversation mit dem Nutzer beendet ist. Beendet ist die Konversation dann, wenn sich aus den Umständen entnehmen lässt, dass der betroffene Sachverhalt abschließend geklärt ist.</p>
-<h2>7. Sicherheit</h2>
-<p>Wir bedienen uns im Übrigen geeigneter technischer und organisatorischer Sicherheitsmaßnahmen, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen Entwicklung fortlaufend verbessert.</p>
-<h2>8. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
-<p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Mai 2025.</p>
-<p>Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf der Website unter <a href="datenschutz.html">https://www.adwerk.at/datenschutz.html</a> von Ihnen abgerufen und ausgedruckt werden.</p>
-<a class="back-btn" href="index.html"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
-
-
-<!-- Footer -->
-
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // AOS initialisieren
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-            
-            // Theme Toggle
-            const themeToggleDesktop = document.getElementById('themeToggle');
-            const themeToggleMobile = document.getElementById('mobileThemeToggle');
-            const htmlElement = document.documentElement;
-            
-            // Gespeichertes Theme laden oder Standard (light) setzen
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            htmlElement.setAttribute('data-theme', savedTheme);
-            
-            // Icons aktualisieren
-            if (savedTheme === 'dark') {
-                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = 'fas fa-moon';
-                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = 'fas fa-moon';
-            } else {
-                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = 'fas fa-sun';
-                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = 'fas fa-sun';
-            }
-            
-            // Theme Toggle Funktion
-            function toggleTheme() {
-                const currentTheme = htmlElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                
-                htmlElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                
-                // Icons aktualisieren
-                const newIcon = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = newIcon;
-                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = newIcon;
-            }
-            
-            // Event-Listener zu Theme-Toggles hinzufügen
-            if (themeToggleDesktop) {
-                themeToggleDesktop.addEventListener('click', toggleTheme);
-            }
-            
-            if (themeToggleMobile) {
-                themeToggleMobile.addEventListener('click', toggleTheme);
-            }
-
-            // Mobile Menü
-            const menuBtn = document.getElementById('menuBtn');
-            const closeBtn = document.getElementById('closeMenu');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const overlay = document.getElementById('overlay');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-            
-            // Menü öffnen
-            if (menuBtn) {
-                menuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.add('active');
-                    overlay.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                });
-            }
-            
-            // Menü schließen
-            function closeMenu() {
-                mobileMenu.classList.remove('active');
-                overlay.style.display = 'none';
-                document.body.style.overflow = '';
-            }
-            
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeMenu);
-            }
-            
-            if (overlay) {
-                overlay.addEventListener('click', closeMenu);
-            }
-            
-            // Menü schließen bei Klick auf einen Link
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', closeMenu);
-            });
-            
-            // Zusätzlicher Event-Listener für Touch-Events auf mobilen Geräten
-            if ('ontouchstart' in window) {
-                // Behandlung von Touch-Ereignissen
-                document.querySelectorAll('a, button').forEach(element => {
-                    element.addEventListener('touchstart', function() {
-                        this.classList.add('touch-active');
-                    });
-                    
-                    element.addEventListener('touchend', function() {
-                        this.classList.remove('touch-active');
-                    });
-                });
-            }
-        });
-        
-        // Sanftes Scrollen für Anker-Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    // Schließe das mobile Menü, wenn es geöffnet ist
-                    const mobileMenu = document.getElementById('mobileMenu');
-                    const overlay = document.getElementById('overlay');
-                    
-                    if (mobileMenu && mobileMenu.classList.contains('active')) {
-                        mobileMenu.classList.remove('active');
-                        if (overlay) overlay.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
-                }
-            });
-        });
-    </script>
-
+</html>
