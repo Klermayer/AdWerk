@@ -28,6 +28,10 @@
             --bg-light: #2d2d2d;
         }
 
+        html {
+            overflow-x: hidden;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -307,6 +311,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            width: 100%;
         }
 
         .section-title {
@@ -698,8 +703,37 @@
             animation: fadeInUp 0.6s ease forwards;
         }
 
-        /* Responsive Design */
+        /* Mobile Fixes */
         @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                position: relative;
+            }
+
+            .hero {
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                right: 50%;
+                margin-left: -50vw;
+                margin-right: -50vw;
+            }
+
+            .slideshow {
+                width: 100%;
+            }
+
+            .slide {
+                width: 100%;
+            }
+
+            .container {
+                padding: 0 1rem;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
             .nav {
                 position: fixed;
                 top: 80px;
@@ -761,6 +795,8 @@
         @media (max-width: 480px) {
             .header-container {
                 padding: 0 1rem;
+                width: 100%;
+                max-width: 100%;
             }
 
             .container {
