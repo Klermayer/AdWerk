@@ -1,1041 +1,592 @@
 <!DOCTYPE html>
-<html data-theme="light" lang="de">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Datenschutzerklärung - AdWerk
-  </title>
-  <!-- Dieselben Stylesheets wie auf der Hauptseite -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
-  <style>
-   :root {
-            /* Light Theme (Default) */
-            --primary-bg: #ffffff;
-            --secondary-bg: #f1f1f1;
-            --text-color: #212529;
-            --text-muted: #6c757d;
-            --card-bg: #f8f9fa;
-            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --border-color: #dee2e6;
-            --accent-orange: #ff6b00;
-            --accent-red: #e63946;
-            --slide-overlay: rgba(255, 255, 255, 0.1);
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz - AdWerk</title>
+    <meta name="description" content="Datenschutzerklärung der AdWerk Werbeagentur - Informationen zum Umgang mit personenbezogenen Daten">
+    <link rel="icon" type="image/png" href="logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #FF6600;
+            --primary-red: #CC0000;
+            --primary-black: #000000;
+            --primary-white: #FFFFFF;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
+
         [data-theme="dark"] {
-            /* Dark Theme */
-            --primary-bg: #121212;
-            --secondary-bg: #1e1e1e;
-            --text-color: #f5f5f5;
-            --text-muted: #adb5bd;
-            --card-bg: #2d2d2d;
-            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            --border-color: #444;
-            --slide-overlay: rgba(0, 0, 0, 0.5);
+            --primary-white: #1a1a1a;
+            --primary-black: #ffffff;
+            --text-dark: #ffffff;
+            --text-light: #cccccc;
+            --bg-light: #2d2d2d;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background-color: var(--primary-bg);
-            color: var(--text-color);
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            font-size: 16px;
+            color: var(--text-dark);
+            background: var(--primary-white);
+            transition: all 0.3s ease;
         }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
+
         /* Header */
-        header {
-            background-color: var(--secondary-bg);
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: var(--accent-orange);
-        }
-        
-        .logo span {
-            color: var(--accent-red);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            align-items: center;
-        }
-        
-        .nav-links li {
-            margin-left: 25px;
-        }
-        
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent-orange);
-        }
-        
-        /* Theme Toggle Button */
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 20px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--card-bg);
-            box-shadow: var(--card-shadow);
-        }
-        
-        .theme-toggle:hover {
-            transform: rotate(15deg);
-            color: var(--accent-orange);
-        }
-        
-        /* Right Controls */
-        .right-controls {
-            display: none;
-        }
-        
-        .mobile-theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 20px;
-            cursor: pointer;
-            margin-right: 15px;
-            padding: 8px;
-        }
-        
-        .mobile-theme-toggle:hover {
-            color: var(--accent-orange);
-        }
-        
-        /* Mobile Menu Button */
-        .menu-btn {
-            background: none;
-            border: none;
-            font-size: 20px;
-            color: var(--text-color);
-            cursor: pointer;
-            padding: 8px;
-        }
-        
-        .menu-btn:hover {
-            color: var(--accent-orange);
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 300px;
-            height: 100vh;
-            background-color: var(--secondary-bg);
-            padding: 50px 30px;
-            z-index: 200;
-            transition: right 0.3s ease;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-            overflow-y: auto;
-        }
-        
-        .mobile-menu.active {
-            right: 0;
-        }
-        
-        .close-menu {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: var(--text-color);
-            cursor: pointer;
-            padding: 8px;
-        }
-        
-        .mobile-nav {
-            list-style: none;
-            margin-top: 20px;
-        }
-        
-        .mobile-nav li {
-            margin-bottom: 15px;
-        }
-        
-        .mobile-nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
-            transition: color 0.3s;
-            display: block;
-            padding: 10px 0;
-        }
-        
-        .mobile-nav a:hover {
-            color: var(--accent-orange);
-        }
-        
-        .overlay {
+        .header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 150;
-            display: none;
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
         }
-        
-        /* Footer */
-        footer {
-            background-color: var(--secondary-bg);
-            padding: 25px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            margin-bottom: 15px;
-        }
-        
-        .footer-links {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .footer-links li {
-            margin: 0 10px;
-        }
-        
-        .footer-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 14px;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent-orange);
-        }
-        
-        .copyright {
-            color: var(--text-muted);
-            font-size: 14px;
-            padding: 0 15px;
-        }
-        
-        /* Zusätzliche Styles für die Datenschutzseite */
-        
-.privacy-content {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
-}
 
-        
-        .privacy-content h1 {
-            font-size: 1.8rem;
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: var(--primary-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav a:hover {
+            color: var(--primary-orange);
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--primary-orange);
+            color: var(--primary-orange);
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary-orange);
+            color: var(--primary-white);
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .burger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-white);
+            transition: all 0.3s ease;
+        }
+
+        /* Main Content */
+        .main {
+            margin-top: 100px;
+            padding: 4rem 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-red);
             margin-bottom: 1rem;
         }
-        
-        .privacy-content h2 {
-            color: var(--accent-orange);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--accent-orange);
-            padding-bottom: 8px;
-            font-size: 1.4rem;
-        }
-        
-        .privacy-content h3 {
-            color: var(--text-color);
-            margin-top: 20px;
-            margin-bottom: 10px;
+
+        .page-subtitle {
             font-size: 1.2rem;
+            color: var(--text-light);
         }
-        
-        .privacy-content p, .privacy-content li {
-            margin-bottom: 12px;
-            line-height: 1.7;
-            font-size: 1rem;
+
+        .content {
+            background: var(--primary-white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
         }
-        
-        .privacy-content ul, .privacy-content ol {
-            margin-left: 20px;
-            margin-bottom: 20px;
-            padding-left: 10px;
+
+        .content h2 {
+            color: var(--primary-red);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-orange);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
         }
-        
-        .privacy-content strong {
-            color: var(--accent-orange);
+
+        .content h2:first-child {
+            margin-top: 0;
         }
-        
-        .back-btn {
+
+        .content h3 {
+            color: var(--primary-orange);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .back-link {
             display: inline-block;
-            margin-top: 20px;
-            margin-bottom: 15px;
-            padding: 10px 20px;
-            background-color: var(--accent-orange);
-            color: white;
+            background: linear-gradient(45deg, var(--primary-orange), var(--primary-red));
+            color: var(--primary-white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-weight: 500;
-        }
-        
-        .back-btn:hover {
-            background-color: var(--accent-red);
-        }
-        
-        /* Für Tabellen */
-        .privacy-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            overflow-x: auto;
-            display: block;
-        }
-        
-        .privacy-table th, .privacy-table td {
-            border: 1px solid var(--border-color);
-            padding: 8px;
-            text-align: left;
-            font-size: 0.9rem;
-        }
-        
-        .privacy-table th {
-            background-color: var(--secondary-bg);
-        }
-        
-        .privacy-table tr:nth-child(even) {
-            background-color: var(--primary-bg);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
         }
 
-        /* Media Queries */
+        .back-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+
+        .toc h3 {
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--primary-red);
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            body {
-                font-size: 16px; /* Basis-Schriftgröße für mobile Geräte */
-            }
-            
-            .container {
-                padding: 0 12px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .right-controls {
-                display: flex;
-                align-items: center;
-            }
-            
-            
-.privacy-content {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
-}
-
-            
-            .privacy-content h1 {
-                font-size: 1.6rem;
-            }
-            
-            .privacy-content h2 {
-                font-size: 1.3rem;
-                margin-top: 25px;
-            }
-            
-            .privacy-content h3 {
-                font-size: 1.1rem;
-            }
-            
-            .privacy-content p, .privacy-content li {
-                font-size: 0.95rem;
-            }
-            
-            /* Verbesserter Footer für Mobilgeräte */
-            .footer-links {
-                flex-direction: column;
-                gap: 5px;
-                margin-bottom: 10px;
-            }
-            
-            .footer-links li {
-                margin: 3px 0;
-            }
-            
-            .copyright {
-                font-size: 12px;
-            }
-            
-            /* Bessere Tap-Targets für Mobilgeräte */
-            .mobile-nav a, 
-            .back-btn,
-            .menu-btn,
-            .mobile-theme-toggle,
-            .close-menu {
-                padding: 12px;
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-            }
-            
-            .back-btn {
-                justify-content: center;
+            .nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
                 width: 100%;
-            }
-            
-            /* Verbesserte Tabellen für Mobilgeräte */
-            .privacy-table {
-                font-size: 0.85rem;
-            }
-            
-            .privacy-table th, .privacy-table td {
-                padding: 6px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .privacy-content h1 {
-                font-size: 1.4rem;
-            }
-            
-            .privacy-content h2 {
-                font-size: 1.2rem;
-            }
-            
-            .privacy-content h3 {
-                font-size: 1rem;
-            }
-            
-            .privacy-content p, .privacy-content li {
-                font-size: 0.9rem;
-            }
-            
-            .mobile-menu {
-                width: 85%;
-            }
-        }
-        
-        /* Verbesserungen für die Touch-Bedienung */
-        @media (pointer: coarse) {
-            .nav-links a,
-            .mobile-nav a,
-            .footer-links a,
-            .mobile-theme-toggle,
-            .menu-btn,
-            .close-menu,
-            .back-btn {
-                padding: 12px;
-                min-height: 44px;
-            }
-            
-            .footer-links li {
-                margin: 5px 10px;
-            }
-        }
-  </style>
- </head>
- <body>
-  <!-- Header -->
-  <header>
-   <div class="container">
-    <nav>
-     <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-      <img alt="AdWerk Logo" src="logo.png" style="height: 40px;"/>
-      <span style="font-size: 24px; font-weight: bold;">
-       <span style="color: var(--accent-orange);">
-        Ad
-       </span>
-       <span style="color: var(--accent-red);">
-        Werk
-       </span>
-      </span>
-     </div>
-     <ul class="nav-links">
-      <li>
-       <a href="index.html">
-        Home
-       </a>
-      </li>
-      <li>
-       <a href="index.html#about">
-        Über uns
-       </a>
-      </li>
-      <li>
-       <a href="index.html#services">
-        Dienstleistungen
-       </a>
-      </li>
-      <li>
-       <a href="index.html#contact">
-        Kontakt
-       </a>
-      </li>
-      <li>
-       <button aria-label="Theme umschalten" class="theme-toggle" id="themeToggle">
-        <i class="fas fa-sun">
-        </i>
-       </button>
-      </li>
-     </ul>
-     <div class="right-controls">
-      <button aria-label="Theme umschalten" class="mobile-theme-toggle" id="mobileThemeToggle">
-       <i class="fas fa-sun">
-       </i>
-      </button>
-      <button aria-label="Menü öffnen" class="menu-btn" id="menuBtn">
-       <i class="fas fa-bars">
-       </i>
-      </button>
-     </div>
-    </nav>
-   </div>
-  </header>
-  <!-- Mobile Menu -->
-  <div class="overlay" id="overlay">
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-   <button aria-label="Menü schließen" class="close-menu" id="closeMenu">
-    <i class="fas fa-times">
-    </i>
-   </button>
-   <ul class="mobile-nav">
-    <li>
-     <a href="index.html">
-      Home
-     </a>
-    </li>
-    <li>
-     <a href="index.html#about">
-      Über uns
-     </a>
-    </li>
-    <li>
-     <a href="index.html#services">
-      Dienstleistungen
-     </a>
-    </li>
-    <li>
-     <a href="index.html#contact">
-      Kontakt
-     </a>
-    </li>
-    <li>
-     <a href="datenschutz.html">
-      Datenschutz
-     </a>
-    </li>
-    <li>
-     <a href="impressum.html">
-      Impressum
-     </a>
-    </li>
-   </ul>
-  </div>
-  <!-- Datenschutz Content -->
-  <div class="container">
-   <div class="privacy-content">
-    <h1>
-     Datenschutzerklärung
-    </h1>
-    <a class="back-btn" href="index.html">
-     <i class="fas fa-arrow-left">
-     </i>
-     Zurück zur Startseite
-    </a>
-    <h2>
-     1. Allgemeine Informationen
-    </h2>
-    <p>
-     Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer Privatsphäre ist für uns sehr wichtig. Nachfolgend informieren wir Sie ausführlich über den Umgang mit Ihren Daten.
-    </p>
-    <h3>
-     1.1 Verantwortliche Stelle
-    </h3>
-    <p>
-     Verantwortlich für die Datenverarbeitung auf dieser Website ist:
-    </p>
-    <p>
-     <strong>
-      AdWerk GmbH
-     </strong>
-     <br/>
-     Musterstraße 123
-     <br/>
-     1010 Wien
-     <br/>
-     Österreich
-     <br/>
-     <br/>
-     Telefon: +43 1 234 56789
-     <br/>
-     E-Mail: info@adwerk.at
-    </p>
-    <h3>
-     1.2 Datenschutzbeauftragter
-    </h3>
-    <p>
-     Unseren Datenschutzbeauftragten erreichen Sie unter:
-    </p>
-    <p>
-     E-Mail: datenschutz@adwerk.at
-     <br/>
-     Telefon: +43 1 234 56789
-    </p>
-    <h2>
-     2. Ihre Rechte
-    </h2>
-    <p>
-     Sie haben folgende Rechte bezüglich der Sie betreffenden personenbezogenen Daten:
-    </p>
-    <ul>
-     <li>
-      <strong>
-       Recht auf Auskunft
-      </strong>
-      (Art. 15 DSGVO)
-     </li>
-     <li>
-      <strong>
-       Recht auf Berichtigung
-      </strong>
-      (Art. 16 DSGVO)
-     </li>
-     <li>
-      <strong>
-       Recht auf Löschung
-      </strong>
-      (Art. 17 DSGVO)
-     </li>
-     <li>
-      <strong>
-       Recht auf Einschränkung der Verarbeitung
-      </strong>
-      (Art. 18 DSGVO)
-     </li>
-     <li>
-      <strong>
-       Recht auf Datenübertragbarkeit
-      </strong>
-      (Art. 20 DSGVO)
-     </li>
-     <li>
-      <strong>
-       Recht auf Widerspruch gegen die Verarbeitung
-      </strong>
-      (Art. 21 DSGVO)
-     </li>
-     <li>
-      <strong>
-       Recht auf Widerruf der datenschutzrechtlichen Einwilligungserklärung
-      </strong>
-      (Art. 7 Abs. 3 DSGVO)
-     </li>
-     <li>
-      <strong>
-       Recht auf Beschwerde bei einer Aufsichtsbehörde
-      </strong>
-      (Art. 77 DSGVO)
-     </li>
-    </ul>
-    <h2>
-     3. Datenerfassung auf unserer Website
-    </h2>
-    <h3>
-     3.1 Beim Besuch unserer Website
-    </h3>
-    <p>
-     Bei der rein informatorischen Nutzung unserer Website, also wenn Sie sich nicht registrieren oder uns anderweitig Informationen übermitteln, erheben wir nur solche Daten, die Ihr Browser an unseren Server übermittelt (sog. "Server-Logfiles"). Wenn Sie unsere Website aufrufen, erheben wir die folgenden Daten, die für uns technisch erforderlich sind, um Ihnen die Website anzuzeigen:
-    </p>
-    <ul>
-     <li>
-      Besuchte Website
-     </li>
-     <li>
-      Datum und Uhrzeit zum Zeitpunkt des Zugriffes
-     </li>
-     <li>
-      Menge der gesendeten Daten in Byte
-     </li>
-     <li>
-      Quelle/Verweis, von welchem Sie auf die Seite gelangten
-     </li>
-     <li>
-      Verwendeter Browser
-     </li>
-     <li>
-      Verwendetes Betriebssystem
-     </li>
-     <li>
-      Verwendete IP-Adresse (ggf. anonymisiert)
-     </li>
-    </ul>
-    <p>
-     Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf Basis unseres berechtigten Interesses an der Verbesserung der Stabilität und Funktionalität unserer Website. Eine Weitergabe oder anderweitige Verwendung der Daten findet nicht statt. Wir behalten uns allerdings vor, die Server-Logfiles nachträglich zu überprüfen, sollten konkrete Anhaltspunkte auf eine rechtswidrige Nutzung hinweisen.
-    </p>
-    <h3>
-     3.2 Bei Nutzung unseres Kontaktformulars
-    </h3>
-    <p>
-     Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
-    </p>
-    <p>
-     Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.
-    </p>
-    <p>
-     Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
-    </p>
-    <h2>
-     4. Cookies und Analysetools
-    </h2>
-    <h3>
-     4.1 Cookies
-    </h3>
-    <p>
-     Unsere Website verwendet Cookies. Hierbei handelt es sich um kleine Dateien, die Ihr Browser automatisch erstellt und die auf Ihrem Endgerät (Laptop, Tablet, Smartphone o.ä.) gespeichert werden, wenn Sie unsere Website besuchen. Cookies richten auf Ihrem Endgerät keinen Schaden an, enthalten keine Viren, Trojaner oder sonstige Schadsoftware.
-    </p>
-    <p>
-     In dem Cookie werden Informationen abgelegt, die sich jeweils im Zusammenhang mit dem spezifisch eingesetzten Endgerät ergeben. Dies bedeutet jedoch nicht, dass wir dadurch unmittelbar Kenntnis von Ihrer Identität erhalten.
-    </p>
-    <p>
-     Der Einsatz von Cookies dient einerseits dazu, die Nutzung unseres Angebots für Sie angenehmer zu gestalten. So setzen wir sogenannte Session-Cookies ein, um zu erkennen, dass Sie einzelne Seiten unserer Website bereits besucht haben. Diese werden nach Verlassen unserer Seite automatisch gelöscht.
-    </p>
-    <p>
-     Darüber hinaus setzen wir ebenfalls zur Optimierung der Benutzerfreundlichkeit temporäre Cookies ein, die für einen bestimmten festgelegten Zeitraum auf Ihrem Endgerät gespeichert werden. Besuchen Sie unsere Seite erneut, um unsere Dienste in Anspruch zu nehmen, wird automatisch erkannt, dass Sie bereits bei uns waren und welche Eingaben und Einstellungen sie getätigt haben, um diese nicht noch einmal eingeben zu müssen.
-    </p>
-    <p>
-     Die durch Cookies verarbeiteten Daten sind für die genannten Zwecke zur Wahrung unserer berechtigten Interessen sowie der Dritter nach Art. 6 Abs. 1 S. 1 lit. f DSGVO erforderlich.
-    </p>
-    <p>
-     Die meisten Browser akzeptieren Cookies automatisch. Sie können Ihren Browser jedoch so konfigurieren, dass keine Cookies auf Ihrem Computer gespeichert werden oder stets ein Hinweis erscheint, bevor ein neuer Cookie angelegt wird. Die vollständige Deaktivierung von Cookies kann jedoch dazu führen, dass Sie nicht alle Funktionen unserer Website nutzen können.
-    </p>
-    <h3>
-     4.2 Google Analytics
-    </h3>
-    <p>
-     Unsere Website nutzt Google Analytics, einen Webanalysedienst der Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google"). Google Analytics verwendet sog. "Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen.
-    </p>
-    <p>
-     Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.
-    </p>
-    <p>
-     Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.
-    </p>
-    <p>
-     Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren:
-     <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">
-      https://tools.google.com/dlpage/gaoptout?hl=de
-     </a>
-     .
-    </p>
-    <p>
-     Wir verwenden Google Analytics mit der Erweiterung "_anonymizeIp()". Dadurch werden IP-Adressen gekürzt weiterverarbeitet und eine direkte Personenbeziehbarkeit kann so ausgeschlossen werden. Soweit den über Sie erhobenen Daten ein Personenbezug zukommt, wird dieser also sofort ausgeschlossen und die personenbezogenen Daten damit umgehend gelöscht.
-    </p>
-    <p>
-     Wir nutzen Google Analytics, um die Nutzung unserer Website analysieren und regelmäßig verbessern zu können. Über die gewonnenen Statistiken können wir unser Angebot verbessern und für Sie als Nutzer interessanter ausgestalten. Für die Ausnahmefälle, in denen personenbezogene Daten in die USA übertragen werden, hat sich Google dem EU-US Privacy Shield unterworfen,
-     <a href="https://www.privacyshield.gov/EU-US-Framework" target="_blank">
-      https://www.privacyshield.gov/EU-US-Framework
-     </a>
-     .
-    </p>
-    <p>
-     Rechtsgrundlage für die Nutzung von Google Analytics ist Art. 6 Abs. 1 S. 1 lit. f DSGVO.
-    </p>
-    <p>
-     Informationen des Drittanbieters: Google Dublin, Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Ireland, Fax: +353 (1) 436 1001. Nutzerbedingungen:
-     <a href="https://www.google.com/analytics/terms/de.html" target="_blank">
-      https://www.google.com/analytics/terms/de.html
-     </a>
-     , Übersicht zum Datenschutz:
-     <a href="https://www.google.com/intl/de/analytics/learn/privacy.html" target="_blank">
-      https://www.google.com/intl/de/analytics/learn/privacy.html
-     </a>
-     , sowie die Datenschutzerklärung:
-     <a href="https://www.google.de/intl/de/policies/privacy" target="_blank">
-      https://www.google.de/intl/de/policies/privacy
-     </a>
-     .
-    </p>
-    <h2>
-     5. Soziale Medien
-    </h2>
-    <p>
-     Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke, um mit den dort aktiven Kunden und Interessenten kommunizieren und sie dort über unsere Dienste informieren zu können. Beim Besuch dieser Onlinepräsenzen können Daten über den Nutzer verarbeitet werden, die über die Grenzen der Europäischen Union hinaus verarbeitet werden können. Dies kann für die Betroffenen Risiken bergen, da z.B. die Durchsetzung von Betroffenenrechten erschwert werden könnte. Wir weisen darauf hin, dass US-Anbieter, die unter dem Privacy-Shield zertifiziert sind, sich verpflichten, die Datenschutzstandards der EU einzuhalten.
-    </p>
-    <p>
-     Wir haben keine Kontrolle über die Datenerhebung und deren weitere Verarbeitung im Falle von sozialen Netzwerken. Es ist nicht ausgeschlossen, dass Anbieter die Daten für eigene Zwecke, z.B. Profiling, verwenden und mit anderen Daten, z.B. Nutzungsdaten anderer Plattformen, verknüpfen.
-    </p>
-    <h2>
-     6. Dauer der Speicherung
-    </h2>
-    <p>
-     Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Für die personenbezogenen Daten, die per E-Mail oder über das Kontaktformular übersandt wurden, ist dies dann der Fall, wenn die jeweilige Konversation mit dem Nutzer beendet ist. Beendet ist die Konversation dann, wenn sich aus den Umständen entnehmen lässt, dass der betroffene Sachverhalt abschließend geklärt ist.
-    </p>
-    <h2>
-     7. Sicherheit
-    </h2>
-    <p>
-     Wir bedienen uns im Übrigen geeigneter technischer und organisatorischer Sicherheitsmaßnahmen, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen Entwicklung fortlaufend verbessert.
-    </p>
-    <h2>
-     8. Aktualität und Änderungen dieser Datenschutzerklärung
-    </h2>
-    <p>
-     Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Mai 2025.
-    </p>
-    <p>
-     Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf der Website unter
-     <a href="datenschutz.html">
-      https://www.adwerk.at/datenschutz.html
-     </a>
-     von Ihnen abgerufen und ausgedruckt werden.
-    </p>
-    <a class="back-btn" href="index.html">
-     <i class="fas fa-arrow-left">
-     </i>
-     Zurück zur Startseite
-    </a>
-   </div>
-  </div>
-  <!-- Footer -->
-  <footer>
-   <div class="logo" style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 15px;">
-    <img alt="AdWerk Logo" src="logo.png" style="height: 40px;"/>
-    <span style="font-size: 24px; font-weight: bold;">
-     <span style="color: var(--accent-orange);">
-      Ad
-     </span>
-     <span style="color: var(--accent-red);">
-      Werk
-     </span>
-    </span>
-   </div>
-   <div class="container">
-    <div class="footer-content">
-    </div>
-    <ul class="footer-links">
-     <li>
-      <a href="index.html">
-       Home
-      </a>
-     </li>
-     <li>
-      <a href="index.html#about">
-       Über uns
-      </a>
-     </li>
-     <li>
-      <a href="index.html#services">
-       Dienstleistungen
-      </a>
-     </li>
-     <li>
-      <a href="index.html#contact">
-       Kontakt
-      </a>
-     </li>
-     <li>
-      <a href="datenschutz.html">
-       Datenschutz
-      </a>
-     </li>
-     <li>
-      <a href="impressum.html">
-       Impressum
-      </a>
-     </li>
-    </ul>
-    <div class="copyright">
-     © 2025 AdWerk. Alle Rechte vorbehalten.
-    </div>
-   </div>
-  </footer>
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js">
-  </script>
-  <script>
-   document.addEventListener('DOMContentLoaded', function() {
-            // AOS initialisieren
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-            
-            // Theme Toggle
-            const themeToggleDesktop = document.getElementById('themeToggle');
-            const themeToggleMobile = document.getElementById('mobileThemeToggle');
-            const htmlElement = document.documentElement;
-            
-            // Gespeichertes Theme laden oder Standard (light) setzen
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            htmlElement.dataset.theme = savedTheme;
-            
-            // Icons aktualisieren
-            if (savedTheme === 'dark') {
-                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = 'fas fa-moon';
-                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = 'fas fa-moon';
-            } else {
-                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = 'fas fa-sun';
-                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = 'fas fa-sun';
-            }
-            
-            // Theme Toggle Funktion
-            function toggleTheme() {
-                const currentTheme = htmlElement.dataset.theme;
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                
-                htmlElement.dataset.theme = newTheme;
-                localStorage.setItem('theme', newTheme);
-                
-                // Icons aktualisieren
-                const newIcon = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-                if (themeToggleDesktop) themeToggleDesktop.querySelector('i').className = newIcon;
-                if (themeToggleMobile) themeToggleMobile.querySelector('i').className = newIcon;
-            }
-            
-            // Event-Listener zu Theme-Toggles hinzufügen
-            if (themeToggleDesktop) {
-                themeToggleDesktop.addEventListener('click', toggleTheme);
-            }
-            
-            if (themeToggleMobile) {
-                themeToggleMobile.addEventListener('click', toggleTheme);
+                height: calc(100vh - 80px);
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s ease;
             }
 
-            // Mobile Menü
-            const menuBtn = document.getElementById('menuBtn');
-            const closeBtn = document.getElementById('closeMenu');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const overlay = document.getElementById('overlay');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-            
-            // Menü öffnen
-            if (menuBtn) {
-                menuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.add('active');
-                    overlay.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                });
+            .nav.active {
+                left: 0;
             }
-            
-            // Menü schließen
-            function closeMenu() {
-                mobileMenu.classList.remove('active');
-                overlay.style.display = 'none';
-                document.body.style.overflow = '';
+
+            .burger {
+                display: flex;
             }
-            
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeMenu);
+
+            .page-title {
+                font-size: 2rem;
             }
-            
-            if (overlay) {
-                overlay.addEventListener('click', closeMenu);
+
+            .content {
+                padding: 2rem;
             }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        .burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="logo1.png" alt="AdWerk Logo" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=&quot;width:50px;height:50px;background:linear-gradient(45deg,#FF6600,#CC0000);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;&quot;>AW</div>'">
+            </div>
+            <nav class="nav" id="nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">Über uns</a>
+                <a href="index.html#services">Leistungen</a>
+                <a href="index.html#contact">Kontakt</a>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+                <div class="burger" id="burger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Datenschutzerklärung</h1>
+                <p class="page-subtitle">Informationen zum Umgang mit Ihren personenbezogenen Daten</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>Inhaltsverzeichnis</h3>
+                <ul>
+                    <li><a href="#verantwortlicher">1. Verantwortlicher</a></li>
+                    <li><a href="#datenverarbeitung">2. Allgemeine Hinweise zur Datenverarbeitung</a></li>
+                    <li><a href="#websitebesuch">3. Besuch der Website</a></li>
+                    <li><a href="#kontaktformular">4. Kontaktformular</a></li>
+                    <li><a href="#cookies">5. Cookies</a></li>
+                    <li><a href="#rechte">6. Ihre Rechte</a></li>
+                    <li><a href="#speicherdauer">7. Speicherdauer</a></li>
+                    <li><a href="#drittanbieter">8. Drittanbieter-Dienste</a></li>
+                    <li><a href="#aenderungen">9. Änderungen der Datenschutzerklärung</a></li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <h2 id="verantwortlicher">1. Verantwortlicher</h2>
+                <div class="highlight-box">
+                    <h4>Verantwortlich für die Datenverarbeitung:</h4>
+                    <p>AdWerk GmbH<br>
+                    Max Mustermann<br>
+                    Musterstraße 123<br>
+                    12345 Musterstadt<br>
+                    Deutschland</p>
+                    <p><strong>E-Mail:</strong> info@adwerk.de<br>
+                    <strong>Telefon:</strong> +49 (0) 123 456 789</p>
+                </div>
+
+                <h2 id="datenverarbeitung">2. Allgemeine Hinweise zur Datenverarbeitung</h2>
+                <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). In diesen Datenschutzinformationen informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.</p>
+
+                <h3>Rechtsgrundlagen der Verarbeitung</h3>
+                <p>Wir verarbeiten personenbezogene Daten nur, wenn eine Rechtsgrundlage dies erlaubt. Folgende Rechtsgrundlagen kommen in Betracht:</p>
+                <ul>
+                    <li><strong>Art. 6 Abs. 1 lit. a DSGVO:</strong> Einwilligung der betroffenen Person</li>
+                    <li><strong>Art. 6 Abs. 1 lit. b DSGVO:</strong> Vertragserfüllung oder vorvertragliche Maßnahmen</li>
+                    <li><strong>Art. 6 Abs. 1 lit. f DSGVO:</strong> Berechtigte Interessen</li>
+                    <li><strong>Art. 6 Abs. 1 lit. c DSGVO:</strong> Rechtliche Verpflichtung</li>
+                </ul>
+
+                <h2 id="websitebesuch">3. Besuch der Website</h2>
+                <p>Bei jedem Zugriff auf unsere Website werden automatisch Informationen allgemeiner Natur erfasst. Diese Informationen (Server-Logfiles) beinhalten etwa die Art des Webbrowsers, das verwendete Betriebssystem, den Domainnamen Ihres Internet-Service-Providers und ähnliches.</p>
+
+                <h3>Folgende Daten werden erhoben:</h3>
+                <ul>
+                    <li>IP-Adresse des zugreifenden Rechners</li>
+                    <li>Datum und Uhrzeit des Zugriffs</li>
+                    <li>Name und URL der abgerufenen Datei</li>
+                    <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
+                    <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
+                </ul>
+
+                <p><strong>Zweck:</strong> Diese Daten werden zu folgenden Zwecken verwendet:</p>
+                <ul>
+                    <li>Gewährleistung eines reibungslosen Verbindungsaufbaus der Website</li>
+                    <li>Gewährleistung einer komfortablen Nutzung unserer Website</li>
+                    <li>Auswertung der Systemsicherheit und -stabilität</li>
+                    <li>Weitere administrative Zwecke</li>
+                </ul>
+
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigte Interessen). Unser berechtigtes Interesse liegt in den oben aufgeführten Zwecken zur Datenerhebung.</p>
+
+                <h2 id="kontaktformular">4. Kontaktformular</h2>
+                <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.</p>
+
+                <h3>Verarbeitete Daten:</h3>
+                <ul>
+                    <li>Name</li>
+                    <li>E-Mail-Adresse</li>
+                    <li>Nachricht/Anfrage</li>
+                    <li>Zeitpunkt der Übermittlung</li>
+                </ul>
+
+                <p><strong>Zweck:</strong> Bearbeitung Ihrer Anfrage und Kommunikation mit Ihnen</p>
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigte Interessen)</p>
+                <p><strong>Speicherdauer:</strong> Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Dies ist in der Regel nach Abschluss der Bearbeitung Ihrer Anfrage der Fall.</p>
+
+                <h2 id="cookies">5. Cookies</h2>
+                <p>Unsere Website verwendet Cookies. Das sind kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert. Cookies helfen uns dabei, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen.</p>
+
+                <h3>Arten von Cookies:</h3>
+                <ul>
+                    <li><strong>Technisch notwendige Cookies:</strong> Diese sind für die Grundfunktionen der Website erforderlich</li>
+                    <li><strong>Komfort-Cookies:</strong> Diese speichern Ihre Einstellungen (z.B. Dark/Light Mode)</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>Cookie-Einstellungen</h4>
+                    <p>Sie können Ihre Cookie-Einstellungen jederzeit in Ihrem Browser ändern. Die meisten Browser sind so eingestellt, dass sie Cookies automatisch akzeptieren. Sie können das Speichern von Cookies jedoch deaktivieren oder Ihren Browser so einstellen, dass er Sie benachrichtigt, sobald Cookies gesendet werden.</p>
+                </div>
+
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigte Interessen) für technisch notwendige Cookies bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) für nicht notwendige Cookies</p>
+
+                <h2 id="rechte">6. Ihre Rechte</h2>
+                <p>Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren.</p>
+
+                <h3>Im Detail haben Sie folgende Rechte:</h3>
+                <ul>
+                    <li><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob betreffende Daten verarbeitet werden und auf Auskunft über diese Daten sowie auf weitere Informationen und Kopie der Daten.</li>
+                    <li><strong>Recht auf Berichtigung (Art. 16 DSGVO):</strong> Sie haben das Recht, die Vervollständigung unvollständiger personenbezogener Daten zu verlangen.</li>
+                    <li><strong>Recht auf Löschung (Art. 17 DSGVO):</strong> Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten zu verlangen.</li>
+                    <li><strong>Recht auf Einschränkung (Art. 18 DSGVO):</strong> Sie haben das Recht, die Einschränkung der Verarbeitung zu verlangen.</li>
+                    <li><strong>Recht auf Datenübertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, die Sie betreffenden personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.</li>
+                    <li><strong>Recht auf Widerspruch (Art. 21 DSGVO):</strong> Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten Widerspruch einzulegen.</li>
+                </ul>
+
+                <h2 id="speicherdauer">7. Speicherdauer</h2>
+                <p>Wir speichern personenbezogene Daten nur so lange, wie dies für die Erfüllung der verfolgten Zwecke erforderlich ist oder wie es die vom Gesetzgeber vorgesehenen Aufbewahrungsfristen vorsehen.</p>
+
+                <p>Nach Fortfall des jeweiligen Zweckes bzw. Ablauf dieser Fristen werden die entsprechenden Daten routinemäßig und entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht.</p>
+
+                <h2 id="drittanbieter">8. Drittanbieter-Dienste</h2>
+                
+                <h3>Formspree (Kontaktformular-Service)</h3>
+                <p>Wir nutzen Formspree für die Verarbeitung unseres Kontaktformulars. Formspree ist ein Service der Formspree Inc., USA.</p>
+                
+                <p><strong>Verarbeitete Daten:</strong> Die über das Kontaktformular übermittelten Daten (Name, E-Mail, Nachricht)</p>
+                <p><strong>Zweck:</strong> Übermittlung und Verarbeitung von Kontaktanfragen</p>
+                <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)</p>
+                
+                <div class="highlight-box">
+                    <h4>Hinweis zu Drittlandübermittlung</h4>
+                    <p>Formspree verarbeitet Daten auch in den USA. Für Übermittlungen in die USA bestehen angemessene Garantien durch entsprechende Zertifizierungen und Vereinbarungen.</p>
+                </div>
+
+                <h3>Google Fonts</h3>
+                <p>Diese Website nutzt zur einheitlichen Darstellung von Schriftarten so genannte Web Fonts, die von Google bereitgestellt werden. Die Google Fonts sind lokal installiert, so dass keine Verbindung zu Servern von Google hergestellt wird.</p>
+
+                <h2 id="aenderungen">9. Änderungen der Datenschutzerklärung</h2>
+                <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z.B. bei der Einführung neuer Services.</p>
+
+                <p>Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
+
+                <div class="highlight-box">
+                    <h4>Kontakt bei Datenschutzfragen</h4>
+                    <p>Falls Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die für den Datenschutz verantwortliche Person in unserer Organisation:</p>
+                    <p><strong>E-Mail:</strong> datenschutz@adwerk.de<br>
+                    <strong>Telefon:</strong> +49 (0) 123 456 789</p>
+                </div>
+
+                <p><strong>Stand dieser Datenschutzerklärung:</strong> Juni 2025</p>
+
+                <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+            <p style="margin-top: 1rem; color: #666;">© 2025 AdWerk. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
             
-            // Menü schließen bei Klick auf einen Link
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', closeMenu);
-            });
-            
-            // Zusätzlicher Event-Listener für Touch-Events auf mobilen Geräten
-            if ('ontouchstart' in window) {
-                // Behandlung von Touch-Ereignissen
-                document.querySelectorAll('a, button').forEach(element => {
-                    element.addEventListener('touchstart', function() {
-                        this.classList.add('touch-active');
-                    });
-                    
-                    element.addEventListener('touchend', function() {
-                        this.classList.remove('touch-active');
-                    });
-                });
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme
+        window.addEventListener('load', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                document.getElementById('themeToggle').textContent = '☀️';
             }
         });
-        
-        // Sanftes Scrollen für Anker-Links
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            const burger = document.getElementById('burger');
+            
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
-                    
-                    // Schließe das mobile Menü, wenn es geöffnet ist
-                    const mobileMenu = document.getElementById('mobileMenu');
-                    const overlay = document.getElementById('overlay');
-                    
-                    if (mobileMenu && mobileMenu.classList.contains('active')) {
-                        mobileMenu.classList.remove('active');
-                        if (overlay) overlay.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
                 }
             });
         });
-  </script>
- </body>
+    </script>
+</body>
 </html>
